@@ -28,3 +28,15 @@ void MM::Multiplication() {
 		cout << "\n";
 	}
 }
+
+void MM::Transposition()
+{
+	cout << "\nOutput:\n";
+	for (int i = 0; i < size1m; i++) {
+		for (int j = 0; j < size1n; j++) {
+			float operation = ary1[j][i];
+			cout << operation << "   ";
+		}
+		cout << "\n";
+	}
+}

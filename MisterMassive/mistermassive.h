@@ -4,7 +4,7 @@ class MM {
 	static int StartInputValue(int input);
 public:
 	// Методы работы с массивами 
-	enum actions { msummation, mmultiplication };
+	enum actions { msummation, mmultiplication, mtransposition};
 	static actions Action;
 
 	// Расзмеры двух массивов
@@ -28,4 +28,5 @@ public:
 	// Операции с массивами
 	static void Summation(); // Сложение массивов
 	static void Multiplication(); // Умножение массивов
+	static void Transposition(); // Транспонирование массива
 };
