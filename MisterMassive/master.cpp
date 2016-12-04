@@ -40,3 +40,19 @@ void MM::Transposition()
 		cout << "\n";
 	}
 }
+
+void MM::SimpleMultiplication()
+{
+	float multi;
+	cout << "\n\nMultiplication by: ";
+	cin >> multi;
+
+	cout << "\nOutput:\n";
+	for (int i = 0; i < size1n; i++) {
+		for (int j = 0; j < size1m; j++) {
+			float operation = ary1[i][j] * multi;
+			cout << operation << "   ";
+		}
+		cout << "\n";
+	}
+}

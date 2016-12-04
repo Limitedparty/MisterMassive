@@ -18,7 +18,7 @@ float MM::ary2[10000][10000];
 
 void MM::StartInput()
 {
-	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n\n";
+	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n\n";
 
 	int now = 0;
 
@@ -43,12 +43,17 @@ void MM::MassiveSizeSet()
 	cin >> MM::size1n;
 
 	// Ну или одного ;)
-	if (MM::Action != mtransposition) {
-		cout << "\nNumber of columns of the array #2: ";
-		cin >> MM::size2m;
-		cout << "\nNumber of rows of the array #2: ";
-		cin >> MM::size2n;
+	if (MM::Action == mtransposition) {
+		return;
 	}
+	if (MM::Action == smultiplication) {
+		return;
+	}
+
+	cout << "\nNumber of columns of the array #2: ";
+	cin >> MM::size2m;
+	cout << "\nNumber of rows of the array #2: ";
+	cin >> MM::size2n;
 
 }
 
@@ -62,12 +67,17 @@ void MM::MassiveInput()
 		}
 	}
 	// Вбиваем данные одного массива, если так надо
-	if (MM::Action != mtransposition) {
-		for (int i = 0; i < size2n; i++) {
-			for (int j = 0; j < size2m; j++) {
-				cout << "\nmassive2[" << i << "][" << j << "]";
-				cin >> ary2[i][j];
-			}
+	if (MM::Action == mtransposition) {
+		return;
+	}
+	if (MM::Action == smultiplication) {
+		return;
+	}
+
+	for (int i = 0; i < size2n; i++) {
+		for (int j = 0; j < size2m; j++) {
+			cout << "\nmassive2[" << i << "][" << j << "]";
+			cin >> ary2[i][j];
 		}
 	}
 }
@@ -90,6 +100,9 @@ void MM::MassiveOperationStart()
 	case mtransposition:
 		MM::Transposition();
 		break;
+	case smultiplication:
+		MM::SimpleMultiplication();
+		break;
 	default:
 		break;
 	}
@@ -108,6 +121,9 @@ int MM::StartInputValue(int input)
 		return 0;
 	case 3:
 		MM::Action = mtransposition;
+		return 0;
+	case 4:
+		MM::Action = smultiplication;
 		return 0;
 	default:
 		return 1;
