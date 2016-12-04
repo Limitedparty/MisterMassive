@@ -1,4 +1,4 @@
-#include "mistermassive.h"
+п»ї#include "mistermassive.h"
 #include <iostream>
 #include <string>
 
@@ -6,13 +6,13 @@ using namespace std;
 
 MM::actions MM::Action;
 
-// Размеры двух массивов
+// Р Р°Р·РјРµСЂС‹ РґРІСѓС… РјР°СЃСЃРёРІРѕРІ
 int MM::size1n;
 int MM::size1m;
 int MM::size2n;
 int MM::size2m;
 
-// Массивы
+// РњР°СЃСЃРёРІС‹
 float MM::ary1[10000][10000];
 float MM::ary2[10000][10000];
 
@@ -36,13 +36,13 @@ void MM::StartInput()
 
 void MM::MassiveSizeSet()
 {
-	// Вбиваем размеры двух массивов
+	// Р’Р±РёРІР°РµРј СЂР°Р·РјРµСЂС‹ РґРІСѓС… РјР°СЃСЃРёРІРѕРІ
 	cout << "\nNumber of columns of the array #1: ";
 	cin >> MM::size1m;
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> MM::size1n;
 
-	// Ну или одного ;)
+	// РќСѓ РёР»Рё РѕРґРЅРѕРіРѕ ;)
 	if (MM::Action == mtransposition) {
 		return;
 	}
@@ -59,14 +59,14 @@ void MM::MassiveSizeSet()
 
 void MM::MassiveInput()
 {
-	// Вбиваем данные массивов
+	// Р’Р±РёРІР°РµРј РґР°РЅРЅС‹Рµ РјР°СЃСЃРёРІРѕРІ
 	for (int i = 0; i < size1n; i++) {
 		for (int j = 0; j < size1m; j++) {
 			cout << "\nmassive1[" << i << "][" << j << "]";
 			cin >> ary1[i][j];
 		}
 	}
-	// Вбиваем данные одного массива, если так надо
+	// Р’Р±РёРІР°РµРј РґР°РЅРЅС‹Рµ РѕРґРЅРѕРіРѕ РјР°СЃСЃРёРІР°, РµСЃР»Рё С‚Р°Рє РЅР°РґРѕ
 	if (MM::Action == mtransposition) {
 		return;
 	}
@@ -84,7 +84,7 @@ void MM::MassiveInput()
 
 void MM::MassiveSizeTest()
 {
-	 // TODO Проверка совместимости массивов
+	 // TODO РџСЂРѕРІРµСЂРєР° СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё РјР°СЃСЃРёРІРѕРІ
 }
 
 void MM::MassiveOperationStart()

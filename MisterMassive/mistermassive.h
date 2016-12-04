@@ -1,33 +1,33 @@
-#pragma once
+п»ї#pragma once
 
 class MM {
 	static int StartInputValue(int input);
 public:
-	// Методы работы с массивами 
+	// РњРµС‚РѕРґС‹ СЂР°Р±РѕС‚С‹ СЃ РјР°СЃСЃРёРІР°РјРё 
 	enum actions { msummation, mmultiplication, mtransposition, smultiplication};
 	static actions Action;
 
-	// Расзмеры двух массивов
-	static int size1n; // кол-во строк массива 1
-	static int size1m; // кол-во столбцов массива 1
-	static int size2n; // кол-во строк массива 2
-	static int size2m; // кол-во столбцовк массива 2
+	// Р Р°СЃР·РјРµСЂС‹ РґРІСѓС… РјР°СЃСЃРёРІРѕРІ
+	static int size1n; // РєРѕР»-РІРѕ СЃС‚СЂРѕРє РјР°СЃСЃРёРІР° 1
+	static int size1m; // РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІ РјР°СЃСЃРёРІР° 1
+	static int size2n; // РєРѕР»-РІРѕ СЃС‚СЂРѕРє РјР°СЃСЃРёРІР° 2
+	static int size2m; // РєРѕР»-РІРѕ СЃС‚РѕР»Р±С†РѕРІРє РјР°СЃСЃРёРІР° 2
 
-	// Два массива
-	static float ary1[10000][10000]; // Костыль. Размер массива ограничен максимально (условно) допустимым значением. Глупо, ну да пофиг.
+	// Р”РІР° РјР°СЃСЃРёРІР°
+	static float ary1[10000][10000]; // РљРѕСЃС‚С‹Р»СЊ. Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР° РѕРіСЂР°РЅРёС‡РµРЅ РјР°РєСЃРёРјР°Р»СЊРЅРѕ (СѓСЃР»РѕРІРЅРѕ) РґРѕРїСѓСЃС‚РёРјС‹Рј Р·РЅР°С‡РµРЅРёРµРј. Р“Р»СѓРїРѕ, РЅСѓ РґР° РїРѕС„РёРі.
 	static float ary2[10000][10000];
 
-	// Функции для работы с вводом
+	// Р¤СѓРЅРєС†РёРё РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РІРІРѕРґРѕРј
 	static void StartInput();
 	static void MassiveSizeSet();
 	static void MassiveInput();
 
-	static void MassiveSizeTest(); // Проверка совместимости массивов в зависимости от типа задачи
-	static void MassiveOperationStart(); // Начинает операцию с массивом
+	static void MassiveSizeTest(); // РџСЂРѕРІРµСЂРєР° СЃРѕРІРјРµСЃС‚РёРјРѕСЃС‚Рё РјР°СЃСЃРёРІРѕРІ РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РёРїР° Р·Р°РґР°С‡Рё
+	static void MassiveOperationStart(); // РќР°С‡РёРЅР°РµС‚ РѕРїРµСЂР°С†РёСЋ СЃ РјР°СЃСЃРёРІРѕРј
 
-	// Операции с массивами
-	static void Summation(); // Сложение массивов
-	static void Multiplication(); // Умножение массивов
-	static void Transposition(); // Транспонирование массива
-	static void SimpleMultiplication(); // Простое умножение эелементов массива
+	// РћРїРµСЂР°С†РёРё СЃ РјР°СЃСЃРёРІР°РјРё
+	static void Summation(); // РЎР»РѕР¶РµРЅРёРµ РјР°СЃСЃРёРІРѕРІ
+	static void Multiplication(); // РЈРјРЅРѕР¶РµРЅРёРµ РјР°СЃСЃРёРІРѕРІ
+	static void Transposition(); // РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ РјР°СЃСЃРёРІР°
+	static void SimpleMultiplication(); // РџСЂРѕСЃС‚РѕРµ СѓРјРЅРѕР¶РµРЅРёРµ СЌРµР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 };
