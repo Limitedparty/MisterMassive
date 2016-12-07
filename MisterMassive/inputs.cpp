@@ -67,7 +67,7 @@ void MM::MassiveInput()
 	// Вбиваем данные первого массива
 	for (int i = 0; i < size1n; i++) {
 		for (int j = 0; j < size1m; j++) {
-			cout << "\nmassive1[" << i << "][" << j << "]";
+			cout << "\nmassive1[" << i << "][" << j << "]: ";
 			cin >> ary1[i][j];
 		}
 	}
@@ -83,7 +83,7 @@ void MM::MassiveInput()
 	// Вбиваем данные второго массива
 	for (int i = 0; i < size2n; i++) {
 		for (int j = 0; j < size2m; j++) {
-			cout << "\nmassive2[" << i << "][" << j << "]";
+			cout << "\nmassive2[" << i << "][" << j << "]: ";
 			cin >> ary2[i][j];
 		}
 	}
