@@ -1,7 +1,9 @@
 # MisterMassive
 Программа для работы с двумя массивами и выполнения над нами операций.
 
-[Скачать последнюю сборку](https://ci.appveyor.com/project/levohup/mistermassive/build/artifacts)
+[Страница на сайте](http://frogling.com/mister-massive.php)
+
+:white_check_mark: [Скачать последнюю сборку](https://ci.appveyor.com/project/levohup/mistermassive/build/artifacts)
 
 ![Screenshot](http://i.imgur.com/zPbsRtt.png)
 
