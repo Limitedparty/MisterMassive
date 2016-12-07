@@ -18,17 +18,21 @@ float MM::ary2[10000][10000];
 
 void MM::StartInput()
 {
+	// Выводим возможные операции
 	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n\n";
 
 	int now = 0;
 
-	while (StartInputValue(now)){
+	// Заставляем выбирать до тех пор, пока нам не дадут существующую операцию.
+	while (StartInputValue(now)){ // См. функцию. Помимо проверки существования операции она еще и присваивается (MM::actions)
 		cout << "Select  action: ";
 		try
 		{
+			// Получаем ввод из клавиатуры и записываем в локальную переменную. Ее в свою очередб отправляем на проверку.
 			cin >> now;
 		}
 		catch (exception e) {
+			// Выводим ошибочку, если нам втирают какую-то дичь.
 			cout << "Error. Please enter integer value.";
 		}
 	}
@@ -36,13 +40,13 @@ void MM::StartInput()
 
 void MM::MassiveSizeSet()
 {
-	// Вбиваем размеры двух массивов
+	// Вбиваем размеры первого массива
 	cout << "\nNumber of columns of the array #1: ";
 	cin >> MM::size1m;
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> MM::size1n;
 
-	// Ну или одного ;)
+	// Тут просто идет отскок, если операция требует всего один массив.
 	if (MM::Action == mtransposition) {
 		return;
 	}
@@ -50,6 +54,7 @@ void MM::MassiveSizeSet()
 		return;
 	}
 
+	// Вбиваем размеры второго массива
 	cout << "\nNumber of columns of the array #2: ";
 	cin >> MM::size2m;
 	cout << "\nNumber of rows of the array #2: ";
@@ -59,7 +64,7 @@ void MM::MassiveSizeSet()
 
 void MM::MassiveInput()
 {
-	// Вбиваем данные массивов
+	// Вбиваем данные первого массива
 	for (int i = 0; i < size1n; i++) {
 		for (int j = 0; j < size1m; j++) {
 			cout << "\nmassive1[" << i << "][" << j << "]";
@@ -67,6 +72,7 @@ void MM::MassiveInput()
 		}
 	}
 	// Вбиваем данные одного массива, если так надо
+	// Тут просто идет отскок, если операция требует всего один массив.
 	if (MM::Action == mtransposition) {
 		return;
 	}
@@ -74,6 +80,7 @@ void MM::MassiveInput()
 		return;
 	}
 
+	// Вбиваем данные второго массива
 	for (int i = 0; i < size2n; i++) {
 		for (int j = 0; j < size2m; j++) {
 			cout << "\nmassive2[" << i << "][" << j << "]";
@@ -89,6 +96,7 @@ void MM::MassiveSizeTest()
 
 void MM::MassiveOperationStart()
 {
+	// В зависимости от выбранной операции, направляет на нужную функцию, которые находятся в master.cpp
 	switch (MM::Action)
 	{
 	case msummation:
@@ -111,6 +119,8 @@ void MM::MassiveOperationStart()
 
 int MM::StartInputValue(int input) 
 {
+	// В зависимости от выбранной цифры выбирает нужную нам операцию.
+	// Если прилетает какая-то дичь - возращаем 1 (т.е. true), что является сигналом о ошибке.
 	switch (input)
 	{
 	case 1:
