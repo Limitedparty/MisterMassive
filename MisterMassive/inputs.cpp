@@ -18,13 +18,13 @@ float MM::ary2[10000][10000];
 
 void MM::StartInput()
 {
-	// Выводим возможные операции
+	// Выводим возможные операции.
 	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n\n";
 
 	int now = 0;
 
 	// Заставляем выбирать до тех пор, пока нам не дадут существующую операцию.
-	while (StartInputValue(now)){ // См. функцию. Помимо проверки существования операции, она еще и присваивается (MM::actions)
+	while (StartInputValue(now)){ // См. функцию. Помимо проверки существования операции, она еще и присваивается (MM::actions).
 		cout << "Select  action: ";
 		try
 		{
@@ -40,7 +40,7 @@ void MM::StartInput()
 
 void MM::MassiveSizeSet()
 {
-	// Вбиваем размеры первого массива
+	// Вбиваем размеры первого массива.
 	cout << "\nNumber of columns of the array #1: ";
 	cin >> MM::size1m;
 	cout << "\nNumber of rows of the array #1: ";
@@ -54,7 +54,7 @@ void MM::MassiveSizeSet()
 		return;
 	}
 
-	// Вбиваем размеры второго массива
+	// Вбиваем размеры второго массива.
 	cout << "\nNumber of columns of the array #2: ";
 	cin >> MM::size2m;
 	cout << "\nNumber of rows of the array #2: ";
@@ -64,14 +64,14 @@ void MM::MassiveSizeSet()
 
 void MM::MassiveInput()
 {
-	// Вбиваем данные первого массива
+	// Вбиваем данные первого массива.
 	for (int i = 0; i < size1n; i++) {
 		for (int j = 0; j < size1m; j++) {
 			cout << "\nmassive1[" << i << "][" << j << "]: ";
 			cin >> ary1[i][j];
 		}
 	}
-	// Вбиваем данные одного массива, если так надо
+	// Вбиваем данные одного массива, если так надо.
 	// Тут просто идет отскок, если операция требует всего один массив.
 	if (MM::Action == mtransposition) {
 		return;
@@ -80,7 +80,7 @@ void MM::MassiveInput()
 		return;
 	}
 
-	// Вбиваем данные второго массива
+	// Вбиваем данные второго массива.
 	for (int i = 0; i < size2n; i++) {
 		for (int j = 0; j < size2m; j++) {
 			cout << "\nmassive2[" << i << "][" << j << "]: ";
@@ -91,7 +91,7 @@ void MM::MassiveInput()
 
 void MM::MassiveSizeTest()
 {
-	 // TODO Проверка совместимости массивов
+	 // TODO Проверка совместимости массивов.
 }
 
 void MM::MassiveOperationStart()
