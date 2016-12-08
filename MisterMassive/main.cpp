@@ -1,13 +1,13 @@
 ﻿#include "mistermassive.h"
 #include <iostream>
 
-// Собственно от сюда стартует программа
+// Собственно, отсюда стартует программа.
 
 int main () {
 	// Вывод приветствия
 	std::cout << "Mister Massive v2\n\n";
 
-	// Выбераем режим
+	// Выбираем режим:
 	MM::StartInput();
 	// Указываем размер массивов
 	MM::MassiveSizeSet();
