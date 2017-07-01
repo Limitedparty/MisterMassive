@@ -19,7 +19,6 @@ int main () {
 	MM::MassiveOperationStart();
 
 	// Конец. Выход по enter.
-	int no;
-	std::cin >> no;
+	system("pause");
 	return 0;
 }
