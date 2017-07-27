@@ -1,5 +1,11 @@
 ﻿#pragma once
 
+class Massive {
+public:
+	float **data;
+	void SetSize(int m, int n);
+};
+
 class MM {
 	static int StartInputValue(int input);
 public:
@@ -14,8 +20,8 @@ public:
 	static int size2m; // кол-во столбцовк массива 2
 
 	// Два массива.
-	static float ** ary1; // Первый массив.
-	static float ** ary2; // Второй масив.
+	static Massive ary1; // Первый массив.
+	static Massive ary2; // Второй масив.
 
 	// Функции для работы с вводом.
 	static void StartInput(); // Выбирает режим.

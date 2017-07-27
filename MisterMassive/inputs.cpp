@@ -13,8 +13,8 @@ int MM::size2n;
 int MM::size2m;
 
 // Массивы
-float ** MM::ary1;
-float ** MM::ary2;;
+Massive MM::ary1;
+Massive MM::ary2;;
 
 void MM::StartInput()
 {
@@ -46,10 +46,7 @@ void MM::MassiveSizeSet()
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> MM::size1n;
 	// Выделяем память массиву
-	MM::ary1 = new float *[size1m];
-	for (int i = 0; i < size1m; i++) {
-		MM::ary1[i] = new float[size1n];
-	}
+	MM::ary1.SetSize(size1m, size1n);
 
 	// Тут просто идет отскок, если операция требует всего один массив.
 	if (MM::Action == mtransposition || MM::Action == smultiplication)
@@ -61,10 +58,7 @@ void MM::MassiveSizeSet()
 	cout << "\nNumber of rows of the array #2: ";
 	cin >> MM::size2n;
 	// Выделяем память массиву
-	MM::ary2 = new float *[size2m];
-	for (int i = 0; i < size2m; i++) {
-		MM::ary2[i] = new float[size2n];
-	}
+	MM::ary2.SetSize(size2m, size2n);
 
 }
 
@@ -74,7 +68,7 @@ void MM::MassiveInput()
 	for (int i = 0; i < size1n; i++) {
 		for (int j = 0; j < size1m; j++) {
 			cout << "\nmassive1[" << i << "][" << j << "]: ";
-			cin >> ary1[i][j];
+			cin >> ary1.data[i][j];
 		}
 	}
 	// Вбиваем данные одного массива, если так надо.
@@ -90,7 +84,7 @@ void MM::MassiveInput()
 	for (int i = 0; i < size2n; i++) {
 		for (int j = 0; j < size2m; j++) {
 			cout << "\nmassive2[" << i << "][" << j << "]: ";
-			cin >> ary2[i][j];
+			cin >> ary2.data[i][j];
 		}
 	}
 }
