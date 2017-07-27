@@ -16,15 +16,14 @@ int MM::size2m;
 Massive MM::ary1;
 Massive MM::ary2;;
 
-void MM::StartInput()
-{
+void MM::StartInput() {
 	// Выводим возможные операции.
 	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n\n";
 
 	int now = 0;
 
 	// Заставляем выбирать до тех пор, пока нам не дадут существующую операцию.
-	while (StartInputValue(now)){ // См. функцию. Помимо проверки существования операции, она еще и присваивается (MM::actions).
+	while (StartInputValue(now)) { // См. функцию. Помимо проверки существования операции, она еще и присваивается (MM::actions).
 		cout << "Select  action: ";
 		try
 		{
@@ -38,8 +37,7 @@ void MM::StartInput()
 	}
 }
 
-void MM::MassiveSizeSet()
-{
+void MM::MassiveSizeSet() {
 	// Вбиваем размеры первого массива.
 	cout << "\nNumber of columns of the array #1: ";
 	cin >> MM::size1m;
@@ -62,8 +60,7 @@ void MM::MassiveSizeSet()
 
 }
 
-void MM::MassiveInput()
-{
+void MM::MassiveInput() {
 	// Вбиваем данные первого массива.
 	for (int i = 0; i < size1n; i++) {
 		for (int j = 0; j < size1m; j++) {
@@ -89,13 +86,11 @@ void MM::MassiveInput()
 	}
 }
 
-void MM::MassiveSizeTest()
-{
+void MM::MassiveSizeTest() {
 	 // TODO Проверка совместимости массивов.
 }
 
-void MM::MassiveOperationStart()
-{
+void MM::MassiveOperationStart() {
 	// В зависимости от выбранной операции, направляет на нужную функцию, которые находятся в master.cpp
 	switch (MM::Action)
 	{
@@ -117,8 +112,7 @@ void MM::MassiveOperationStart()
 }
 
 
-int MM::StartInputValue(int input) 
-{
+int MM::StartInputValue(int input) {
 	// В зависимости от выбранной цифры выбирает нужную нам операцию.
 	// Если прилетает какая-то дичь - возращаем 1 (т.е. true), что является сигналом об ошибке.
 	switch (input)

@@ -32,8 +32,7 @@ void MM::Multiplication() {
 }
 
 // Транспонирование массива:
-void MM::Transposition()
-{
+void MM::Transposition() {
 	cout << "\nOutput:\n";
 	for (int i = 0; i < size1m; i++) {
 		for (int j = 0; j < size1n; j++) {
@@ -45,8 +44,7 @@ void MM::Transposition()
 }
 
 // Простое умножение массива:
-void MM::SimpleMultiplication()
-{
+void MM::SimpleMultiplication() {
 	float multi;
 	cout << "\n\nMultiplication by: ";
 	cin >> multi;
