@@ -14,15 +14,15 @@ public:
 	static int size2m; // кол-во столбцовк массива 2
 
 	// Два массива.
-	static float ary1[10000][10000]; // Костыль. Размер массива ограничен максимально (условно) допустимым значением. Глупо, ну да пофиг.
-	static float ary2[10000][10000];
+	static float ** ary1; // Первый массив.
+	static float ** ary2; // Второй масив.
 
 	// Функции для работы с вводом.
-	static void StartInput();
-	static void MassiveSizeSet();
-	static void MassiveInput();
+	static void StartInput(); // Выбирает режим.
+	static void MassiveSizeSet(); // Устанавливает размер и выделяет память массивам.
+	static void MassiveInput(); // Ввод данных в массив(ы).
 
-	static void MassiveSizeTest(); // Проверка совместимости массивов в зависимости от типа задачи.
+	static void MassiveSizeTest(); // Проверка совместимости массивов в зависимости от типа задачи. (TODO)
 	static void MassiveOperationStart(); // Начинает операцию с массивом.
 
 	// Операции с массивами.
