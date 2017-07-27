@@ -7,8 +7,8 @@ using namespace std;
 // Операция сложения двух массивов:
 void MM::Summation() {
 	cout << "\nOutput:\n";
-	for (int i = 0; i < size1n; i++) {
-		for (int j = 0; j < size1m; j++) {
+	for (int i = 0; i < MM::ary1.n; i++) {
+		for (int j = 0; j < MM::ary1.m; j++) {
 			float operation = ary1.data[i][j] + ary2.data[i][j]; // Сама операция.
 			cout << operation << "   "; // Ее вывод.
 		}
@@ -19,10 +19,10 @@ void MM::Summation() {
 // Операция умножения двух массивов:
 void MM::Multiplication() {
 	cout << "\nOutput:\n";
-	for (int i = 0; i < size2m; i++) {
-		for (int j = 0; j < size1n; j++) {
+	for (int i = 0; i < MM::ary2.m; i++) {
+		for (int j = 0; j < MM::ary1.n; j++) {
 			float operation = 0;
-			for (int a = 0; a < size1m; a++) { // Повторение операции и сложение.
+			for (int a = 0; a < MM::ary1.m; a++) { // Повторение операции и сложение.
 				operation += ary1.data[i][a] * ary2.data[a][j]; // Операция.
 			}
 			cout << operation << "   "; // Вывод.
@@ -34,8 +34,8 @@ void MM::Multiplication() {
 // Транспонирование массива:
 void MM::Transposition() {
 	cout << "\nOutput:\n";
-	for (int i = 0; i < size1m; i++) {
-		for (int j = 0; j < size1n; j++) {
+	for (int i = 0; i < MM::ary1.m; i++) {
+		for (int j = 0; j < MM::ary1.n; j++) {
 			float operation = ary1.data[j][i]; // Операция.
 			cout << operation << "   "; // Вывод.
 		}
@@ -50,8 +50,8 @@ void MM::SimpleMultiplication() {
 	cin >> multi;
 
 	cout << "\nOutput:\n";
-	for (int i = 0; i < size1n; i++) {
-		for (int j = 0; j < size1m; j++) {
+	for (int i = 0; i < MM::ary1.n; i++) {
+		for (int j = 0; j < MM::ary1.m; j++) {
 			float operation = ary1.data[i][j] * multi; // Операция.
 			cout << operation << "   "; // Вывод.
 		}

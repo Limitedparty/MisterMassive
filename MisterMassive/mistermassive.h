@@ -2,8 +2,9 @@
 
 class Massive {
 public:
-	float **data;
-	void SetSize(int m, int n);
+	float **data; // Собственно сам массив.
+	int m, n; // Размеры массива.
+	void SetSize(int m, int n);  // Установка размера массива и выделение памяти.
 };
 
 class MM {
@@ -12,12 +13,6 @@ public:
 	// Методы работы с массивами.
 	enum actions { msummation, mmultiplication, mtransposition, smultiplication};
 	static actions Action;
-
-	// Расзмеры двух массивов.
-	static int size1n; // кол-во строк массива 1
-	static int size1m; // кол-во столбцов массива 1
-	static int size2n; // кол-во строк массива 2
-	static int size2m; // кол-во столбцовк массива 2
 
 	// Два массива.
 	static Massive ary1; // Первый массив.

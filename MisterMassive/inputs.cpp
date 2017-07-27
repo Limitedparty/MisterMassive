@@ -6,12 +6,6 @@ using namespace std;
 
 MM::actions MM::Action;
 
-// Размеры двух массивов
-int MM::size1n;
-int MM::size1m;
-int MM::size2n;
-int MM::size2m;
-
 // Массивы
 Massive MM::ary1;
 Massive MM::ary2;;
@@ -40,11 +34,11 @@ void MM::StartInput() {
 void MM::MassiveSizeSet() {
 	// Вбиваем размеры первого массива.
 	cout << "\nNumber of columns of the array #1: ";
-	cin >> MM::size1m;
+	cin >> MM::ary1.m;
 	cout << "\nNumber of rows of the array #1: ";
-	cin >> MM::size1n;
+	cin >> MM::ary1.n;
 	// Выделяем память массиву
-	MM::ary1.SetSize(size1m, size1n);
+	MM::ary1.SetSize(MM::ary1.m, MM::ary1.n);
 
 	// Тут просто идет отскок, если операция требует всего один массив.
 	if (MM::Action == mtransposition || MM::Action == smultiplication)
@@ -52,34 +46,31 @@ void MM::MassiveSizeSet() {
 
 	// Вбиваем размеры второго массива.
 	cout << "\nNumber of columns of the array #2: ";
-	cin >> MM::size2m;
+	cin >> MM::ary2.m;
 	cout << "\nNumber of rows of the array #2: ";
-	cin >> MM::size2n;
+	cin >> MM::ary2.n;
 	// Выделяем память массиву
-	MM::ary2.SetSize(size2m, size2n);
+	MM::ary2.SetSize(MM::ary2.m, MM::ary2.n);
 
 }
 
 void MM::MassiveInput() {
 	// Вбиваем данные первого массива.
-	for (int i = 0; i < size1n; i++) {
-		for (int j = 0; j < size1m; j++) {
+	for (int i = 0; i < MM::ary1.n; i++) {
+		for (int j = 0; j < MM::ary1.m; j++) {
 			cout << "\nmassive1[" << i << "][" << j << "]: ";
 			cin >> ary1.data[i][j];
 		}
 	}
 	// Вбиваем данные одного массива, если так надо.
 	// Тут просто идет отскок, если операция требует всего один массив.
-	if (MM::Action == mtransposition) {
-		return;
-	}
-	if (MM::Action == smultiplication) {
+	if (MM::Action == mtransposition || MM::Action == smultiplication) {
 		return;
 	}
 
 	// Вбиваем данные второго массива.
-	for (int i = 0; i < size2n; i++) {
-		for (int j = 0; j < size2m; j++) {
+	for (int i = 0; i < MM::ary2.n; i++) {
+		for (int j = 0; j < MM::ary2.m; j++) {
 			cout << "\nmassive2[" << i << "][" << j << "]: ";
 			cin >> ary2.data[i][j];
 		}
