@@ -52,12 +52,8 @@ void MM::MassiveSizeSet()
 	}
 
 	// Тут просто идет отскок, если операция требует всего один массив.
-	if (MM::Action == mtransposition) {
+	if (MM::Action == mtransposition || MM::Action == smultiplication)
 		return;
-	}
-	if (MM::Action == smultiplication) {
-		return;
-	}
 
 	// Вбиваем размеры второго массива.
 	cout << "\nNumber of columns of the array #2: ";
