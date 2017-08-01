@@ -24,3 +24,9 @@ std::ostream & operator<<(std::ostream & os, const Massive & masive) {
 	}
 	return os;
 }
+
+// Сложение массивов.
+Massive Massive::operator+(Massive & massive) {
+	Massive operation;
+	return Massive();
+}
