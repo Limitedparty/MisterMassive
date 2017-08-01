@@ -1,17 +1,17 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 
 class Massive {
 private:
-	double** data; // Собственно сам массив.
-	int m_, n_; // Размеры массива.
+	double** data; // РЎРѕР±СЃС‚РІРµРЅРЅРѕ СЃР°Рј РјР°СЃСЃРёРІ.
+	int m_, n_; // Р Р°Р·РјРµСЂС‹ РјР°СЃСЃРёРІР°.
 public:
-	void init(int & m, int & n); // Инициализация и создание массива.
-	friend std::ostream & operator<<(std::ostream & os, const Massive & masive); // Операция ввывода массива в консоль (с помощью cout).
+	void init(int & m, int & n); // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Рё СЃРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР°.
+	friend std::ostream & operator<<(std::ostream & os, const Massive & masive); // РћРїРµСЂР°С†РёСЏ РІРІС‹РІРѕРґР° РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ (СЃ РїРѕРјРѕС‰СЊСЋ cout).
 
-	// Доступные операции.
-	Massive operator+(Massive & massive); // Сложение массивов.
-	Massive operator+(double & object); // Простое сложение массива.
-	Massive operator*(Massive & massive); // Умножение массивов.
-	Massive operator^(Massive & massive); // Транспонирование массивов.
+	// Р”РѕСЃС‚СѓРїРЅС‹Рµ РѕРїРµСЂР°С†РёРё.
+	Massive operator+(Massive & massive); // РЎР»РѕР¶РµРЅРёРµ РјР°СЃСЃРёРІРѕРІ.
+	Massive operator+(double & object); // РџСЂРѕСЃС‚РѕРµ СЃР»РѕР¶РµРЅРёРµ РјР°СЃСЃРёРІР°.
+	Massive operator*(Massive & massive); // РЈРјРЅРѕР¶РµРЅРёРµ РјР°СЃСЃРёРІРѕРІ.
+	Massive operator^(Massive & massive); // РўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёРµ РјР°СЃСЃРёРІРѕРІ.
 };
