@@ -87,7 +87,7 @@ void MM::MassiveSizeTest() {
 }
 
 void MM::MassiveOperationStart() {
-	// В зависимости от выбранной операции, направляет на нужную функцию, которые находятся в master.cpp
+	// В зависимости от выбранной операции проделывает работу
 	switch (MM::Action)
 	{
 	case msummation:

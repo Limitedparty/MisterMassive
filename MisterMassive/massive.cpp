@@ -27,7 +27,7 @@ std::ostream & operator<<(std::ostream & os, const Massive & masive) {
 
 // Изменение элемента массива
 void Massive::set(int & n, int & m, double var) {
-	data[n][m] = var;
+	data[n][m] = var; // Вери симпл, мэн! Нарушаем ООП нафиг.
 }
 
 

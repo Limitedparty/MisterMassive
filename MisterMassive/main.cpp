@@ -1,5 +1,4 @@
 ﻿#include "mistermassive.h"
-#include <iostream>
 
 // Собственно, отсюда стартует программа.
 

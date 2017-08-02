@@ -16,7 +16,6 @@ public:
 	static void StartInput(); // Выбирает режим.
 	static void MassiveSizeSet(); // Устанавливает размер и выделяет память массивам.
 	static void MassiveInput(); // Ввод данных в массив(ы).
-
 	static void MassiveSizeTest(); // Проверка совместимости массивов в зависимости от типа задачи. (TODO)
 	static void MassiveOperationStart(); // Начинает операцию с массивом.
 };
