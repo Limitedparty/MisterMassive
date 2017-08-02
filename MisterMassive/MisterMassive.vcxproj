@@ -153,9 +153,11 @@
   <ItemGroup>
     <ClCompile Include="inputs.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="massive.cpp" />
     <ClCompile Include="master.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="massive.h" />
     <ClInclude Include="mistermassive.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
