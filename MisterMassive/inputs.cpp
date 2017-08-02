@@ -36,9 +36,9 @@ void MM::MassiveSizeSet() {
 
 	// Вбиваем размеры первого массива.
 	cout << "\nNumber of columns of the array #1: ";
-	cin >> n;
-	cout << "\nNumber of rows of the array #1: ";
 	cin >> m;
+	cout << "\nNumber of rows of the array #1: ";
+	cin >> n;
 	// Выделяем память массиву
 	MM::ary1.init(n, m);
 
@@ -48,9 +48,9 @@ void MM::MassiveSizeSet() {
 
 	// Вбиваем размеры второго массива.
 	cout << "\nNumber of columns of the array #2: ";
-	cin >> n;
-	cout << "\nNumber of rows of the array #2: ";
 	cin >> m;
+	cout << "\nNumber of rows of the array #2: ";
+	cin >> n;
 	// Выделяем память массиву
 	MM::ary2.init(n, m);
 }
@@ -59,9 +59,10 @@ void MM::MassiveInput() {
 	double input;
 
 	// Вбиваем данные первого массива.
+	cout << ary1.n();
 	for (int i = 0; i < MM::ary1.n(); i++) {
 		for (int j = 0; j < MM::ary1.m(); j++) {
-			cout << "\nmassive1[" << i << "][" << j << "]: ";
+			cout << "\nmassive1[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
 			ary1.set(i, j, input);
 		}
@@ -75,7 +76,7 @@ void MM::MassiveInput() {
 	// Вбиваем данные второго массива.
 	for (int i = 0; i < MM::ary2.n(); i++) {
 		for (int j = 0; j < MM::ary2.m(); j++) {
-			cout << "\nmassive2[" << i << "][" << j << "]: ";
+			cout << "\nmassive2[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
 			ary2.set(i, j, input);
 		}

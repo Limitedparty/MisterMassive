@@ -21,9 +21,6 @@
     <ClCompile Include="inputs.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="master.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="massive.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>

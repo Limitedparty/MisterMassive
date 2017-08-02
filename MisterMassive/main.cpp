@@ -4,7 +4,7 @@
 
 int main () {
 	// Вывод приветствия.
-	std::cout << "Mister Massive v2\n\n";
+	std::cout << "Mister Massive v3\n\n";
 
 	// Выбираем режим:
 	MM::StartInput();

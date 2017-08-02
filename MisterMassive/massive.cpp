@@ -7,9 +7,9 @@ void Massive::init(int & n, int & m) {
 	m_ = m;
 
 	// Выделяем память массиву
-	data = new double *[m_];
-	for (int i = 0; i < m_; i++) {
-		data[i] = new double[n_];
+	data = new double *[n_];
+	for (int i = 0; i < n_; i++) {
+		data[i] = new double[m_];
 	}
 }
 
@@ -77,7 +77,7 @@ Massive Massive::transposition() {
 	operation.init(m_, n_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
-			operation.data[i][j] = data[j][i]; // Собственно сама операция
+			operation.data[j][i] = data[i][j]; // Собственно сама операция
 		}
 	}
 	return operation;
