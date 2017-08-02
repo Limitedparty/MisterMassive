@@ -9,7 +9,7 @@ public:
 	void init(int & n, int & m); // Инициализация и создание массива
 	friend std::ostream & operator<<(std::ostream & os, const Massive & masive); // Операция ввывода массива в консоль (с помощью cout)
 	void set(int & n, int & m, double var); // Изменение элемента массива
-	double get(int & n, int & m) { return data[n][m]; }; // Получение элемента массива
+	const double get(int & n, int & m) { return data[n][m]; }; // Получение элемента массива
 	const int n() { return n_; }; // Возвращает количество столбцов
 	const int m() { return m_; }; // возвращает количество строк
 

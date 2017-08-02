@@ -37,7 +37,7 @@ Massive Massive::operator+(Massive & massive) {
 	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
-			operation.data[i][j] = data[i][j] + massive.get(i, j); // Собственно сама операция
+			operation.data[i][j] = data[i][j] + massive.data[i][j]; // Собственно сама операция
 		}
 	}
 	return operation;
@@ -47,11 +47,13 @@ Massive Massive::operator+(Massive & massive) {
 Massive Massive::operator*(Massive & massive) {
 	Massive operation;
 	operation.init(m_, massive.n_); // Инициализируем локальный массив, который выкинем в ответ
-	for (int i = 0; i < massive.m_; i++) {
+	for (int i = 0; i < m_; i++) {
 		for (int j = 0; j < n_; j++) {
+			double input = 0;
 			for (size_t k = 0; k < m_; k++) {
-				operation.data[i][k] += data[i][k] * massive.data[k][j]; // Магия
+				input += data[i][k] * massive.data[k][j]; // Магия
 			}
+			operation.data[i][j] = input;
 		}
 	}
 	return operation;
@@ -63,7 +65,7 @@ Massive Massive::operator*(double & var) {
 	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
-			operation.data[n_][m_] = data[n_][m_] + var; // Собственно сама операция
+			operation.data[i][j] = data[i][j] * var; // Собственно сама операция
 		}
 	}
 	return operation;
