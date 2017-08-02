@@ -22,7 +22,8 @@ std::ostream & operator<<(std::ostream & os, const Massive & masive) {
 		}
 		os << std::endl; // Переход на новую строку
 	}
-	return os;
+
+	return os; // возвращаем ostream который прекрасно поймет cout
 }
 
 // Изменение элемента массива
