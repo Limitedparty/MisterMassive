@@ -25,13 +25,19 @@ std::ostream & operator<<(std::ostream & os, const Massive & masive) {
 	return os;
 }
 
+// Изменение элемента массива
+void Massive::set(int & n, int & m, double var) {
+	data[n][m] = var;
+}
+
+
 // Сложение двух массивов
 Massive Massive::operator+(Massive & massive) {
 	Massive operation;
 	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
-			operation.data[n_][m_] = data[n_][m_] + massive.data[n_][m_]; // Собственно сама операция
+			operation.data[i][j] = data[i][j] + massive.get(i, j); // Собственно сама операция
 		}
 	}
 	return operation;
@@ -46,6 +52,18 @@ Massive Massive::operator*(Massive & massive) {
 			for (size_t k = 0; k < m_; k++) {
 				operation.data[i][k] += data[i][k] * massive.data[k][j]; // Магия
 			}
+		}
+	}
+	return operation;
+}
+
+// Простое умножение массива
+Massive Massive::operator*(double & var) {
+	Massive operation;
+	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
+	for (int i = 0; i < n_; i++) { // Перебираем
+		for (int j = 0; j < m_; j++) { // весь массив
+			operation.data[n_][m_] = data[n_][m_] + var; // Собственно сама операция
 		}
 	}
 	return operation;

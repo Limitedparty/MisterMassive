@@ -1,4 +1,4 @@
-﻿#include "mistermassive.h"
+﻿/*#include "mistermassive.h"
 #include <iostream>
 #include <string>
 
@@ -66,3 +66,4 @@ void Massive::SetSize(int m, int n) {
 		data[i] = new float[n];
 	}
 }
+*/

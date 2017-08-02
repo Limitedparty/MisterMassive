@@ -32,13 +32,15 @@ void MM::StartInput() {
 }
 
 void MM::MassiveSizeSet() {
+	int n, m;
+
 	// Вбиваем размеры первого массива.
 	cout << "\nNumber of columns of the array #1: ";
-	cin >> MM::ary1.m;
+	cin >> n;
 	cout << "\nNumber of rows of the array #1: ";
-	cin >> MM::ary1.n;
+	cin >> m;
 	// Выделяем память массиву
-	MM::ary1.SetSize(MM::ary1.m, MM::ary1.n);
+	MM::ary1.init(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив.
 	if (MM::Action == mtransposition || MM::Action == smultiplication)
@@ -46,33 +48,36 @@ void MM::MassiveSizeSet() {
 
 	// Вбиваем размеры второго массива.
 	cout << "\nNumber of columns of the array #2: ";
-	cin >> MM::ary2.m;
+	cin >> n;
 	cout << "\nNumber of rows of the array #2: ";
-	cin >> MM::ary2.n;
+	cin >> m;
 	// Выделяем память массиву
-	MM::ary2.SetSize(MM::ary2.m, MM::ary2.n);
-
+	MM::ary2.init(n, m);
 }
 
 void MM::MassiveInput() {
+	double input;
+
 	// Вбиваем данные первого массива.
-	for (int i = 0; i < MM::ary1.n; i++) {
-		for (int j = 0; j < MM::ary1.m; j++) {
+	for (int i = 0; i < MM::ary1.n(); i++) {
+		for (int j = 0; j < MM::ary1.m(); j++) {
 			cout << "\nmassive1[" << i << "][" << j << "]: ";
-			cin >> ary1.data[i][j];
+			cin >> input;
+			ary1.set(i, j, input);
 		}
 	}
+
 	// Вбиваем данные одного массива, если так надо.
 	// Тут просто идет отскок, если операция требует всего один массив.
-	if (MM::Action == mtransposition || MM::Action == smultiplication) {
+	if (MM::Action == mtransposition || MM::Action == smultiplication)
 		return;
-	}
 
 	// Вбиваем данные второго массива.
-	for (int i = 0; i < MM::ary2.n; i++) {
-		for (int j = 0; j < MM::ary2.m; j++) {
+	for (int i = 0; i < MM::ary2.n(); i++) {
+		for (int j = 0; j < MM::ary2.m(); j++) {
 			cout << "\nmassive2[" << i << "][" << j << "]: ";
-			cin >> ary2.data[i][j];
+			cin >> input;
+			ary2.set(i, j, input);
 		}
 	}
 }
@@ -86,16 +91,19 @@ void MM::MassiveOperationStart() {
 	switch (MM::Action)
 	{
 	case msummation:
-		MM::Summation();
+		cout << endl << MM::ary1 + MM::ary2;
 		break;
 	case mmultiplication:
-		MM::Multiplication();
+		cout << endl << MM::ary1 * MM::ary2;
 		break;
 	case mtransposition:
-		MM::Transposition();
+		cout << endl << MM::ary1.transposition();
 		break;
 	case smultiplication:
-		MM::SimpleMultiplication();
+		double multi;
+		cout << "\n\nMultiplication by: ";
+		cin >> multi;
+		cout << endl << MM::ary1 * multi;
 		break;
 	default:
 		break;
