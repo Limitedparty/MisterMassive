@@ -15,5 +15,5 @@ public:
 	Massive operator+(Massive & massive); // Сложение массивов
 	Massive operator+(double & var); // Простое сложение массива
 	Massive operator*(Massive & massive); // Умножение массивов
-	Massive operator^(Massive & massive); // Транспонирование массивов
+	Massive transposition(); // Транспонирование массива
 };

@@ -25,13 +25,39 @@ std::ostream & operator<<(std::ostream & os, const Massive & masive) {
 	return os;
 }
 
-// Сложение массивов
+// Сложение двух массивов
 Massive Massive::operator+(Massive & massive) {
 	Massive operation;
 	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
-			operation.data[m_][n_] = data[m_][n_] + massive.data[m_][n_]; // Собственно сама операция
+			operation.data[n_][m_] = data[n_][m_] + massive.data[n_][m_]; // Собственно сама операция
+		}
+	}
+	return operation;
+}
+
+// Умножение двух массивов
+Massive Massive::operator*(Massive & massive) {
+	Massive operation;
+	operation.init(m_, massive.n_); // Инициализируем локальный массив, который выкинем в ответ
+	for (int i = 0; i < massive.m_; i++) {
+		for (int j = 0; j < n_; j++) {
+			for (size_t k = 0; k < m_; k++) {
+				operation.data[i][k] += data[i][k] * massive.data[k][j]; // Магия
+			}
+		}
+	}
+	return operation;
+}
+
+// Транспонирование массива
+Massive Massive::transposition() {
+	Massive operation;
+	operation.init(m_, n_); // Инициализируем локальный массив, который выкинем в ответ
+	for (int i = 0; i < n_; i++) { // Перебираем
+		for (int j = 0; j < m_; j++) { // весь массив
+			operation.data[i][j] = data[j][i]; // Собственно сама операция
 		}
 	}
 	return operation;
