@@ -2,11 +2,19 @@
 #include "massive.h"
 
 /* Указывает номер версии */
-#ifdef APPVEYOR_BUILD_VERSION
-#define VERSION APPVEYOR_BUILD_VERSION
+#ifdef BUILD_VERSION
+#define VERSION BUILD_VERSION
 #else
-#define VERSION 3
+#define VERSION 0
 #endif
+
+/* Указывает номер сборки */
+#ifdef BUILD_ID
+#define BUILDID BUILD_ID
+#else
+#define BUILDID 0
+#endif
+
 
 /*
 	Сей класс содержит прототипы функций, управляющий работой программы.

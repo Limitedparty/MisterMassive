@@ -17,7 +17,9 @@
 
 int main () {
 	// Вывод приветствия
-	std::cout << "Mister Massive v." << VERSION << "\n\n";
+	std::cout << "Mister Massive v3.0." << VERSION << " (" << BUILDID << ")";
+	if (!BUILDID) std::cout << " test build!";
+	std::cout << "\n\n";
 
 	// Выбираем режим:
 	MM::StartInput();
