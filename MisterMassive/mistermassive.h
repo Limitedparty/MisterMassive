@@ -1,6 +1,13 @@
 ﻿#pragma once
 #include "massive.h"
 
+/* Указывает номер версии */
+#ifdef APPVEYOR_BUILD_VERSION
+#define VERSION APPVEYOR_BUILD_VERSION
+#else
+#define VERSION 3
+#endif
+
 /*
 	Сей класс содержит прототипы функций, управляющий работой программы.
 */

@@ -17,7 +17,7 @@
 
 int main () {
 	// Вывод приветствия
-	std::cout << "Mister Massive v3\n\n";
+	std::cout << "Mister Massive v." << VERSION << "\n\n";
 
 	// Выбираем режим:
 	MM::StartInput();
