@@ -13,13 +13,14 @@
 */
 #include "mistermassive.h"
 
+const char* VERSION = "{version}";
+const char* BUILDID = "{buildid}";
+
 // Собственно, отсюда стартует программа
 
 int main () {
 	// Вывод приветствия
-	std::cout << "Mister Massive v3.0." << VERSION << " (" << BUILDID << ")";
-	if (!BUILDID) std::cout << " test build!";
-	std::cout << "\n\n";
+	std::cout << "Mister Massive v" << VERSION << " (" << BUILDID << ")\n\n";
 
 	// Выбираем режим:
 	MM::StartInput();
