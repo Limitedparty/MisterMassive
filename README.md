@@ -3,7 +3,7 @@
 
 :white_check_mark: [Скачать последнюю сборку](https://ci.appveyor.com/project/levohup/mistermassive/build/artifacts)
 
-![Screenshot](http://i.imgur.com/zPbsRtt.png)
+![Screenshot](http://i.imgur.com/zBSis3t.png)
 
 ## Build Status
 [![Build status](https://ci.appveyor.com/api/projects/status/vjyaflvxf2xj5700?svg=true)](https://ci.appveyor.com/project/levohup/mistermassive)
