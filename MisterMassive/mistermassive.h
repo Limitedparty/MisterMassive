@@ -13,8 +13,8 @@ public:
 	static actions Action; // Выбранная операция
 
 	// Два массива
-	static Massive ary1; // Первый массив
-	static Massive ary2; // Второй масив
+	static Massive* ary1; // Первый массив
+	static Massive* ary2; // Второй масив
 
 	// Функции для работы с вводом
 	static void StartInput(); // Выбирает режим

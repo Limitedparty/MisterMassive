@@ -7,8 +7,8 @@ using namespace std;
 MM::actions MM::Action;
 
 // Массивы (объявлены в классе)
-Massive MM::ary1;
-Massive MM::ary2;;
+Massive* MM::ary1;
+Massive* MM::ary2;
 
 void MM::StartInput() {
 	// Выводим возможные операции
@@ -40,7 +40,7 @@ void MM::MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> n;
 	// Выделяем память массиву
-	MM::ary1.init(n, m);
+	MM::ary1 = new Massive(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив
 	if (MM::Action == mtransposition || MM::Action == smultiplication)
@@ -52,19 +52,18 @@ void MM::MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #2: ";
 	cin >> n;
 	// Выделяем память массиву
-	MM::ary2.init(n, m);
+	MM::ary2 = new Massive(n, m);
 }
 
 void MM::MassiveInput() {
 	double input;
 
 	// Вбиваем данные первого массива.
-	cout << ary1.n();
-	for (int i = 0; i < MM::ary1.n(); i++) {
-		for (int j = 0; j < MM::ary1.m(); j++) {
+	for (int i = 0; i < MM::ary1->n(); i++) {
+		for (int j = 0; j < MM::ary1->m(); j++) {
 			cout << "\nmassive1[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
-			ary1.set(i, j, input);
+			ary1->set(i, j, input);
 		}
 	}
 
@@ -74,11 +73,11 @@ void MM::MassiveInput() {
 		return;
 
 	// Вбиваем данные второго массива.
-	for (int i = 0; i < MM::ary2.n(); i++) {
-		for (int j = 0; j < MM::ary2.m(); j++) {
+	for (int i = 0; i < MM::ary2->n(); i++) {
+		for (int j = 0; j < MM::ary2->m(); j++) {
 			cout << "\nmassive2[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
-			ary2.set(i, j, input);
+			ary2->set(i, j, input);
 		}
 	}
 }
@@ -92,19 +91,19 @@ void MM::MassiveOperationStart() {
 	switch (MM::Action)
 	{
 	case msummation:
-		cout << endl << MM::ary1 + MM::ary2;
+		cout << endl << *MM::ary1 + *MM::ary2;
 		break;
 	case mmultiplication:
-		cout << endl << MM::ary1 * MM::ary2;
+		cout << endl << *MM::ary1 * *MM::ary2;
 		break;
 	case mtransposition:
-		cout << endl << MM::ary1.transposition();
+		cout << endl << MM::ary1->transposition();
 		break;
 	case smultiplication:
 		double multi;
 		cout << "\n\nMultiplication by: ";
 		cin >> multi;
-		cout << endl << MM::ary1 * multi;
+		cout << endl << *MM::ary1 * multi;
 		break;
 	default:
 		break;
