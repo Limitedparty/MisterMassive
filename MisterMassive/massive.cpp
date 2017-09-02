@@ -43,6 +43,18 @@ Massive Massive::operator+(Massive & massive) {
 	return operation;
 }
 
+// Простое сложение массива
+Massive Massive::operator+(double & var)
+{
+	Massive operation(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
+	for (int i = 0; i < n_; i++) { // Перебираем
+		for (int j = 0; j < m_; j++) { // весь массив
+			operation.data[i][j] = data[i][j] + var; // Собственно сама операция
+		}
+	}
+	return operation;
+}
+
 // Умножение двух массивов
 Massive Massive::operator*(Massive & massive) {
 	Massive operation(n_, massive.m_); // Инициализируем локальный массив, который выкинем в ответ

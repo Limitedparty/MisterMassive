@@ -38,7 +38,7 @@ public:
 
 	// Доступные операции
 	Massive operator+(Massive & massive); // Сложение массивов
-	Massive operator+(double & var); // Простое сложение массива (TODO)
+	Massive operator+(double & var); // Простое сложение массива
 	Massive operator*(Massive & massive); // Умножение массивов
 	Massive operator*(double & var); // Простое умножение массива
 	Massive transposition(); // Транспонирование массива

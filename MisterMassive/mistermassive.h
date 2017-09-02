@@ -9,7 +9,7 @@ class MM {
 	static int StartInputValue(int input);  // Проверка валидности выбранной операции
 public:
 	// Методы работы с массивами
-	enum actions { msummation, mmultiplication, mtransposition, smultiplication}; // Все возможные операции
+	enum actions { msummation, mmultiplication, mtransposition, smultiplication, ssummation}; // Все возможные операции
 	static actions Action; // Выбранная операция
 
 	// Два массива

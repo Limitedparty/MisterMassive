@@ -12,7 +12,7 @@ Massive* MM::ary2;
 
 void MM::StartInput() {
 	// Выводим возможные операции
-	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n\n";
+	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n(5) Simple summation massive\n\n";
 
 	int now = 0;
 
@@ -43,7 +43,7 @@ void MM::MassiveSizeSet() {
 	MM::ary1 = new Massive(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (MM::Action == mtransposition || MM::Action == smultiplication)
+	if (MM::Action == mtransposition || MM::Action == smultiplication || MM::Action == ssummation)
 		return;
 
 	// Вбиваем размеры второго массива
@@ -69,7 +69,7 @@ void MM::MassiveInput() {
 
 	// Вбиваем данные одного массива, если так надо
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (MM::Action == mtransposition || MM::Action == smultiplication)
+	if (MM::Action == mtransposition || MM::Action == smultiplication || MM::Action == ssummation)
 		return;
 
 	// Вбиваем данные второго массива.
@@ -105,6 +105,12 @@ void MM::MassiveOperationStart() {
 		cin >> multi;
 		cout << endl << *MM::ary1 * multi;
 		break;
+	case ssummation:
+		double var;
+		cout << "\n\nSummation by: ";
+		cin >> var;
+		cout << endl << *MM::ary1 + var;
+		break;
 	default:
 		break;
 	}
@@ -127,6 +133,9 @@ int MM::StartInputValue(int input) {
 		return 0;
 	case 4:
 		MM::Action = smultiplication;
+		return 0;
+	case 5:
+		MM::Action = ssummation;
 		return 0;
 	default:
 		return 1;
