@@ -37,7 +37,7 @@ void MassiveSizeSet() {
 	m1 = new Massive(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (Action == mtransposition || Action == smultiplication || Action == ssummation)
+	if (Mode == mtransposition || Mode == smultiplication || Mode == ssummation)
 		return;
 
 	// Вбиваем размеры второго массива
@@ -63,7 +63,7 @@ void MassiveInput() {
 
 	// Вбиваем данные одного массива, если так надо
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (Action == mtransposition || Action == smultiplication || Action == ssummation)
+	if (Mode == mtransposition || Mode == smultiplication || Mode == ssummation)
 		return;
 
 	// Вбиваем данные второго массива.
@@ -82,7 +82,7 @@ void MassiveSizeTest() {
 
 void MassiveOperationStart() {
 	// В зависимости от выбранной операции проделывает работу
-	switch (Action)
+	switch (Mode)
 	{
 	case msummation:
 		cout << endl << *m1 + *m2;
@@ -117,19 +117,19 @@ int StartInputValue(int input) {
 	switch (input)
 	{
 	case 1:
-		Action = msummation;
+		Mode = msummation;
 		return 0;
 	case 2:
-		Action = mmultiplication;
+		Mode = mmultiplication;
 		return 0;
 	case 3:
-		Action = mtransposition;
+		Mode = mtransposition;
 		return 0;
 	case 4:
-		Action = smultiplication;
+		Mode = smultiplication;
 		return 0;
 	case 5:
-		Action = ssummation;
+		Mode = ssummation;
 		return 0;
 	default:
 		return 1;

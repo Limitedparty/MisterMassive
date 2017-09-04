@@ -9,7 +9,7 @@ static int StartInputValue(int input);  // Проверка валидности
 
 // Методы работы с массивами
 enum modes { msummation, mmultiplication, mtransposition, smultiplication, ssummation }; // Все возможные операции
-static modes Action; // Выбранная операция
+static modes Mode; // Выбранная операция
 
 // Два массива
 static Massive *m1; // Первый массив
