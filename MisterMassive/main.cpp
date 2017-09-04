@@ -23,15 +23,15 @@ int main () {
 	std::cout << "Mister Massive v" << VERSION << " (" << BUILDID << ")\n\n";
 
 	// Выбираем режим:
-	MM::StartInput();
+	StartInput();
 	// Указываем размер массивов
-	MM::MassiveSizeSet();
+	MassiveSizeSet();
 	// Проверяем совместимость массивов
-	MM::MassiveSizeTest();
+	MassiveSizeTest();
 	// Вводим данные в массивы (заполняем их)
-	MM::MassiveInput();
+	MassiveInput();
 	// Начинаем оперировать с массивами в зависимости от поставленной задачи
-	MM::MassiveOperationStart();
+	MassiveOperationStart();
 
 	// Конец. Выход по enter
 	system("pause");

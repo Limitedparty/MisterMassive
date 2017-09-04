@@ -4,13 +4,7 @@
 
 using namespace std;
 
-MM::actions MM::Action;
-
-// Массивы (объявлены в классе)
-Massive *MM::ary1;
-Massive *MM::ary2;
-
-void MM::StartInput() {
+void StartInput() {
 	// Выводим возможные операции
 	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n(5) Simple summation massive\n\n";
 
@@ -31,7 +25,7 @@ void MM::StartInput() {
 	}
 }
 
-void MM::MassiveSizeSet() {
+void MassiveSizeSet() {
 	int n, m;
 
 	// Вбиваем размеры первого массива
@@ -40,10 +34,10 @@ void MM::MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> n;
 	// Выделяем память массиву
-	MM::ary1 = new Massive(n, m);
+	ary1 = new Massive(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (MM::Action == mtransposition || MM::Action == smultiplication || MM::Action == ssummation)
+	if (Action == mtransposition || Action == smultiplication || Action == ssummation)
 		return;
 
 	// Вбиваем размеры второго массива
@@ -52,15 +46,15 @@ void MM::MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #2: ";
 	cin >> n;
 	// Выделяем память массиву
-	MM::ary2 = new Massive(n, m);
+	ary2 = new Massive(n, m);
 }
 
-void MM::MassiveInput() {
+void MassiveInput() {
 	double input;
 
 	// Вбиваем данные первого массива.
-	for (int i = 0; i < MM::ary1->n(); i++) {
-		for (int j = 0; j < MM::ary1->m(); j++) {
+	for (int i = 0; i < ary1->n(); i++) {
+		for (int j = 0; j < ary1->m(); j++) {
 			cout << "\nmassive1[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
 			ary1->set(i, j, input);
@@ -69,12 +63,12 @@ void MM::MassiveInput() {
 
 	// Вбиваем данные одного массива, если так надо
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (MM::Action == mtransposition || MM::Action == smultiplication || MM::Action == ssummation)
+	if (Action == mtransposition || Action == smultiplication || Action == ssummation)
 		return;
 
 	// Вбиваем данные второго массива.
-	for (int i = 0; i < MM::ary2->n(); i++) {
-		for (int j = 0; j < MM::ary2->m(); j++) {
+	for (int i = 0; i < ary2->n(); i++) {
+		for (int j = 0; j < ary2->m(); j++) {
 			cout << "\nmassive2[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
 			ary2->set(i, j, input);
@@ -82,34 +76,34 @@ void MM::MassiveInput() {
 	}
 }
 
-void MM::MassiveSizeTest() {
+void MassiveSizeTest() {
 	 // TODO Проверка совместимости массивов
 }
 
-void MM::MassiveOperationStart() {
+void MassiveOperationStart() {
 	// В зависимости от выбранной операции проделывает работу
-	switch (MM::Action)
+	switch (Action)
 	{
 	case msummation:
-		cout << endl << *MM::ary1 + *MM::ary2;
+		cout << endl << *ary1 + *ary2;
 		break;
 	case mmultiplication:
-		cout << endl << *MM::ary1 * *MM::ary2;
+		cout << endl << *ary1 * *ary2;
 		break;
 	case mtransposition:
-		cout << endl << MM::ary1->transposition();
+		cout << endl << ary1->transposition();
 		break;
 	case smultiplication:
 		double multi;
 		cout << "\n\nMultiplication by: ";
 		cin >> multi;
-		cout << endl << *MM::ary1 * multi;
+		cout << endl << *ary1 * multi;
 		break;
 	case ssummation:
 		double var;
 		cout << "\n\nSummation by: ";
 		cin >> var;
-		cout << endl << *MM::ary1 + var;
+		cout << endl << *ary1 + var;
 		break;
 	default:
 		break;
@@ -117,25 +111,25 @@ void MM::MassiveOperationStart() {
 }
 
 // Проверка валидности выбранной операции
-int MM::StartInputValue(int input) {
+int StartInputValue(int input) {
 	// В зависимости от выбранной цифры выбирает нужную нам операцию
 	// Если прилетает какая-то дичь - возращаем 1 (т.е. true), что является сигналом об ошибке
 	switch (input)
 	{
 	case 1:
-		MM::Action = msummation;
+		Action = msummation;
 		return 0;
 	case 2:
-		MM::Action = mmultiplication;
+		Action = mmultiplication;
 		return 0;
 	case 3:
-		MM::Action = mtransposition;
+		Action = mtransposition;
 		return 0;
 	case 4:
-		MM::Action = smultiplication;
+		Action = smultiplication;
 		return 0;
 	case 5:
-		MM::Action = ssummation;
+		Action = ssummation;
 		return 0;
 	default:
 		return 1;
