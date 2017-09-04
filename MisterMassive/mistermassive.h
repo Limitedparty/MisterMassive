@@ -8,8 +8,8 @@
 static int StartInputValue(int input);  // Проверка валидности выбранной операции
 
 // Методы работы с массивами
-enum actions { msummation, mmultiplication, mtransposition, smultiplication, ssummation }; // Все возможные операции
-static actions Action; // Выбранная операция
+enum modes { msummation, mmultiplication, mtransposition, smultiplication, ssummation }; // Все возможные операции
+static modes Action; // Выбранная операция
 
 // Два массива
 static Massive *m1; // Первый массив
