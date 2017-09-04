@@ -52,7 +52,7 @@ void MassiveSizeSet() {
 void MassiveInput() {
 	double input;
 
-	// Вбиваем данные первого массива.
+	// Вбиваем данные первого массива
 	for (int i = 0; i < m1->n(); i++) {
 		for (int j = 0; j < m1->m(); j++) {
 			cout << "\nmassive1[" << i + 1 << "][" << j + 1 << "]: ";
@@ -66,7 +66,7 @@ void MassiveInput() {
 	if (Mode == mtransposition || Mode == smultiplication || Mode == ssummation)
 		return;
 
-	// Вбиваем данные второго массива.
+	// Вбиваем данные второго массива
 	for (int i = 0; i < m2->n(); i++) {
 		for (int j = 0; j < m2->m(); j++) {
 			cout << "\nmassive2[" << i + 1 << "][" << j + 1 << "]: ";
@@ -81,7 +81,7 @@ void MassiveSizeTest() {
 }
 
 void MassiveOperationStart() {
-	// В зависимости от выбранной операции проделывает работу
+	// В зависимости от выбранной операции начинает делать фигню (операцию)
 	switch (Mode)
 	{
 	case msummation:
@@ -112,8 +112,7 @@ void MassiveOperationStart() {
 
 // Проверка валидности выбранной операции
 int StartInputValue(int input) {
-	// В зависимости от выбранной цифры выбирает нужную нам операцию
-	// Если прилетает какая-то дичь - возращаем 1 (т.е. true), что является сигналом об ошибке
+	// Если прилетает какая-то дичь - возращаем true, что является сигналом об ошибке
 	switch (input)
 	{
 	case 1:
