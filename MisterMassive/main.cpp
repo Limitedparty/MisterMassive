@@ -13,8 +13,8 @@
 */
 #include "mistermassive.h"
 
-const char* VERSION = "{version}";
-const char* BUILDID = "{buildid}";
+const char *VERSION = "{version}";
+const char *BUILDID = "{buildid}";
 
 // Собственно, отсюда стартует программа
 

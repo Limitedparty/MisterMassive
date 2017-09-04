@@ -7,8 +7,8 @@ using namespace std;
 MM::actions MM::Action;
 
 // Массивы (объявлены в классе)
-Massive* MM::ary1;
-Massive* MM::ary2;
+Massive *MM::ary1;
+Massive *MM::ary2;
 
 void MM::StartInput() {
 	// Выводим возможные операции

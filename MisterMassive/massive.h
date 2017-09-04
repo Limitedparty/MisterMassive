@@ -25,7 +25,7 @@
 
 class Massive {
 private:
-	double** data; // Собственно сам массив [строка][стобец]
+	double **data; // Собственно сам массив [строка][стобец]
 	int n_; // Строка
 	int m_; // Стобец
 public:
