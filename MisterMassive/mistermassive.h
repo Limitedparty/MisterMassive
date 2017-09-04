@@ -11,11 +11,11 @@ static int StartInputValue(int input);  // Проверка валидности
 enum actions { msummation, mmultiplication, mtransposition, smultiplication, ssummation }; // Все возможные операции
 static actions Action; // Выбранная операция
 
-					   // Два массива
-static Massive *ary1; // Первый массив
-static Massive *ary2; // Второй масив
+// Два массива
+static Massive *m1; // Первый массив
+static Massive *m2; // Второй масив
 
-					  // Функции для работы с вводом
+// Функции для работы с вводом
 void StartInput(); // Выбирает режим
 void MassiveSizeSet(); // Устанавливает размер и выделяет память массивам
 void MassiveInput(); // Ввод данных в массив(ы)

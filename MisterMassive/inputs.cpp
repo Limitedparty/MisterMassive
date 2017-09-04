@@ -34,7 +34,7 @@ void MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> n;
 	// Выделяем память массиву
-	ary1 = new Massive(n, m);
+	m1 = new Massive(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив
 	if (Action == mtransposition || Action == smultiplication || Action == ssummation)
@@ -46,18 +46,18 @@ void MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #2: ";
 	cin >> n;
 	// Выделяем память массиву
-	ary2 = new Massive(n, m);
+	m2 = new Massive(n, m);
 }
 
 void MassiveInput() {
 	double input;
 
 	// Вбиваем данные первого массива.
-	for (int i = 0; i < ary1->n(); i++) {
-		for (int j = 0; j < ary1->m(); j++) {
+	for (int i = 0; i < m1->n(); i++) {
+		for (int j = 0; j < m1->m(); j++) {
 			cout << "\nmassive1[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
-			ary1->set(i, j, input);
+			m1->set(i, j, input);
 		}
 	}
 
@@ -67,11 +67,11 @@ void MassiveInput() {
 		return;
 
 	// Вбиваем данные второго массива.
-	for (int i = 0; i < ary2->n(); i++) {
-		for (int j = 0; j < ary2->m(); j++) {
+	for (int i = 0; i < m2->n(); i++) {
+		for (int j = 0; j < m2->m(); j++) {
 			cout << "\nmassive2[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
-			ary2->set(i, j, input);
+			m2->set(i, j, input);
 		}
 	}
 }
@@ -85,25 +85,25 @@ void MassiveOperationStart() {
 	switch (Action)
 	{
 	case msummation:
-		cout << endl << *ary1 + *ary2;
+		cout << endl << *m1 + *m2;
 		break;
 	case mmultiplication:
-		cout << endl << *ary1 * *ary2;
+		cout << endl << *m1 * *m2;
 		break;
 	case mtransposition:
-		cout << endl << ary1->transposition();
+		cout << endl << m1->transposition();
 		break;
 	case smultiplication:
 		double multi;
 		cout << "\n\nMultiplication by: ";
 		cin >> multi;
-		cout << endl << *ary1 * multi;
+		cout << endl << *m1 * multi;
 		break;
 	case ssummation:
 		double var;
 		cout << "\n\nSummation by: ";
 		cin >> var;
-		cout << endl << *ary1 + var;
+		cout << endl << *m1 + var;
 		break;
 	default:
 		break;
