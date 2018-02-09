@@ -33,7 +33,9 @@ int main () {
 	// Начинаем оперировать с массивами в зависимости от поставленной задачи
 	MassiveOperationStart();
 
-	// Конец. Выход по enter
+	// Конец. Выход по enter (только для Windows)
+	#ifdef _WIN32
 	system("pause");
+	#endif
 	return 0;
 }
