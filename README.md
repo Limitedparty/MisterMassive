@@ -1,4 +1,6 @@
-# MisterMassive v3
+# MisterMassive v4
+## IN DEV
+
 Программа для работы с двумя массивами и выполнения над ними операций.
 
 :white_check_mark: [Скачать последнюю сборку](https://ci.appveyor.com/project/levohup/mistermassive/build/artifacts)
