@@ -1,28 +1,22 @@
 // Определение размера (для массивов)
 class Size {
  private:
-  int _x;  // Ширина (столбцы)
-  int _y;  // Высота (строки)
+  int x_;  // Ширина (столбцы)
+  int y_;  // Высота (строки)
 
  public:
   // Конструктор размера (по умолчанию 0 и 0)
   Size() {
-    _x = 0;
-    _y = 0;
+    x_ = 0;
+    y_ = 0;
   }
   Size(int& x, int& y) {
-    _x = x;
-    _y = y;
+    x_ = x;
+    y_ = y;
   }
 
-  // Операция присвоения
-  Size operator=(Size b) {
-    _x = b.getX();
-    _y = b.getY();
-  }
-
-  int getX() { return _x; }     // Получение ширины
-  int getY() { return _y; }     // Получение высоты
-  void setX(int & x) { _x = x; }  // Установка ширины
-  void setY(int & y) { _y = y; }  // Установка высоты
+  int getX() { return x_; }     // Получение ширины
+  int getY() { return y_; }     // Получение высоты
+  void setX(int & x) { x_ = x; }  // Установка ширины
+  void setY(int & y) { y_ = y; }  // Установка высоты
 };

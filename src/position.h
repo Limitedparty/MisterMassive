@@ -3,21 +3,21 @@
 
 class Position {
  private:
-  int _x;  // Столбец
-  int _y;  // Строка
+  int x_;  // Столбец
+  int y_;  // Строка
  public:
   // Конструктор позиции (по умолчанию 0 0)
   Position() {
-    _x = 0;
-    _y = 0;
+    x_ = 0;
+    y_ = 0;
   }
   Position(int& x, int& y) {
-    _x = x;
-    _y = y;
+    x_ = x;
+    y_ = y;
   }
 
-  int getX() { return _x; }      // Получение столбца
-  int getY() { return _y; }      // Получение строки
-  void setX(int& x) { _x = x; }  // Установка столбца
-  void setY(int& y) { _y = y; }  // Установка строки
-}
+  int getX() { return x_; }      // Получение столбца
+  int getY() { return y_; }      // Получение строки
+  void setX(int& x) { x_ = x; }  // Установка столбца
+  void setY(int& y) { y_ = y; }  // Установка строки
+};
