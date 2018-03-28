@@ -66,7 +66,7 @@ void MisterMassive::DeclareMassive() {
     }
   }
 
-  PrintMassive();
+  massives[id].print();
 }
 
 void MisterMassive::PrintMassive() {
