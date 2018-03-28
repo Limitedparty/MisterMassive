@@ -4,20 +4,14 @@
 
 using namespace std;
 
-MM::actions MM::Action;
-
-// Массивы (объявлены в классе)
-Massive MM::ary1;
-Massive MM::ary2;;
-
-void MM::StartInput() {
+void StartInput() {
 	// Выводим возможные операции
-	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n\n";
+	cout << "Actions:\n(1) Summation massives\n(2) Multiplication massives\n(3) Transposition massive\n(4) Simple multiplication massive\n(5) Simple summation massive\n\n";
 
 	int now = 0;
 
 	// Заставляем выбирать до тех пор, пока нам не дадут существующую операцию
-	while (StartInputValue(now)) { // См. функцию. Помимо проверки существования операции, она еще и присваивается (MM::actions)
+	while (StartInputValue(now)) { // См. функцию. Помимо проверки существования операции, она еще и присваивается (actions)
 		cout << "Select  action: ";
 		try
 		{
@@ -31,7 +25,7 @@ void MM::StartInput() {
 	}
 }
 
-void MM::MassiveSizeSet() {
+void MassiveSizeSet() {
 	int n, m;
 
 	// Вбиваем размеры первого массива
@@ -40,10 +34,10 @@ void MM::MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #1: ";
 	cin >> n;
 	// Выделяем память массиву
-	MM::ary1.init(n, m);
+	m1 = new Massive(n, m);
 
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (MM::Action == mtransposition || MM::Action == smultiplication)
+	if (Mode == mtransposition || Mode == smultiplication || Mode == ssummation)
 		return;
 
 	// Вбиваем размеры второго массива
@@ -52,59 +46,64 @@ void MM::MassiveSizeSet() {
 	cout << "\nNumber of rows of the array #2: ";
 	cin >> n;
 	// Выделяем память массиву
-	MM::ary2.init(n, m);
+	m2 = new Massive(n, m);
 }
 
-void MM::MassiveInput() {
+void MassiveInput() {
 	double input;
 
-	// Вбиваем данные первого массива.
-	cout << ary1.n();
-	for (int i = 0; i < MM::ary1.n(); i++) {
-		for (int j = 0; j < MM::ary1.m(); j++) {
+	// Вбиваем данные первого массива
+	for (int i = 0; i < m1->n(); i++) {
+		for (int j = 0; j < m1->m(); j++) {
 			cout << "\nmassive1[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
-			ary1.set(i, j, input);
+			m1->set(i, j, input);
 		}
 	}
 
 	// Вбиваем данные одного массива, если так надо
 	// Тут просто идет отскок, если операция требует всего один массив
-	if (MM::Action == mtransposition || MM::Action == smultiplication)
+	if (Mode == mtransposition || Mode == smultiplication || Mode == ssummation)
 		return;
 
-	// Вбиваем данные второго массива.
-	for (int i = 0; i < MM::ary2.n(); i++) {
-		for (int j = 0; j < MM::ary2.m(); j++) {
+	// Вбиваем данные второго массива
+	for (int i = 0; i < m2->n(); i++) {
+		for (int j = 0; j < m2->m(); j++) {
 			cout << "\nmassive2[" << i + 1 << "][" << j + 1 << "]: ";
 			cin >> input;
-			ary2.set(i, j, input);
+			m2->set(i, j, input);
 		}
 	}
 }
 
-void MM::MassiveSizeTest() {
+void MassiveSizeTest() {
 	 // TODO Проверка совместимости массивов
 }
 
-void MM::MassiveOperationStart() {
-	// В зависимости от выбранной операции проделывает работу
-	switch (MM::Action)
+void MassiveOperationStart() {
+	// В зависимости от выбранной операции начинает делать фигню (операцию)
+	switch (Mode)
 	{
 	case msummation:
-		cout << endl << MM::ary1 + MM::ary2;
+		cout << endl << *m1 + *m2;
 		break;
 	case mmultiplication:
-		cout << endl << MM::ary1 * MM::ary2;
+		cout << endl << *m1 * *m2;
 		break;
 	case mtransposition:
-		cout << endl << MM::ary1.transposition();
+		cout << endl << m1->transposition();
 		break;
 	case smultiplication:
 		double multi;
 		cout << "\n\nMultiplication by: ";
 		cin >> multi;
-		cout << endl << MM::ary1 * multi;
+		cout << endl << *m1 * multi;
+		break;
+	case ssummation:
+		double var;
+		cout << "\n\nSummation by: ";
+		cin >> var;
+		cout << endl << *m1 + var;
 		break;
 	default:
 		break;
@@ -112,22 +111,24 @@ void MM::MassiveOperationStart() {
 }
 
 // Проверка валидности выбранной операции
-int MM::StartInputValue(int input) {
-	// В зависимости от выбранной цифры выбирает нужную нам операцию
-	// Если прилетает какая-то дичь - возращаем 1 (т.е. true), что является сигналом об ошибке
+int StartInputValue(int input) {
+	// Если прилетает какая-то дичь - возращаем true, что является сигналом об ошибке
 	switch (input)
 	{
 	case 1:
-		MM::Action = msummation;
+		Mode = msummation;
 		return 0;
 	case 2:
-		MM::Action = mmultiplication;
+		Mode = mmultiplication;
 		return 0;
 	case 3:
-		MM::Action = mtransposition;
+		Mode = mtransposition;
 		return 0;
 	case 4:
-		MM::Action = smultiplication;
+		Mode = smultiplication;
+		return 0;
+	case 5:
+		Mode = ssummation;
 		return 0;
 	default:
 		return 1;

@@ -1,7 +1,7 @@
 ﻿#include "massive.h"
 
-// Инициализация и создание массива
-void Massive::init(int & n, int & m) {
+// Конструктор массива
+Massive::Massive(int & n, int & m) {
 	// Записываем размер массива
 	n_ = n;
 	m_ = m;
@@ -22,7 +22,8 @@ std::ostream & operator<<(std::ostream & os, const Massive & masive) {
 		}
 		os << std::endl; // Переход на новую строку
 	}
-	return os;
+
+	return os; // возвращаем ostream который прекрасно поймет cout
 }
 
 // Изменение элемента массива
@@ -33,8 +34,7 @@ void Massive::set(int & n, int & m, double var) {
 
 // Сложение двух массивов
 Massive Massive::operator+(Massive & massive) {
-	Massive operation;
-	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
+	Massive operation(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
 			operation.data[i][j] = data[i][j] + massive.data[i][j]; // Собственно сама операция
@@ -43,10 +43,21 @@ Massive Massive::operator+(Massive & massive) {
 	return operation;
 }
 
+// Простое сложение массива
+Massive Massive::operator+(double & var)
+{
+	Massive operation(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
+	for (int i = 0; i < n_; i++) { // Перебираем
+		for (int j = 0; j < m_; j++) { // весь массив
+			operation.data[i][j] = data[i][j] + var; // Собственно сама операция
+		}
+	}
+	return operation;
+}
+
 // Умножение двух массивов
 Massive Massive::operator*(Massive & massive) {
-	Massive operation;
-	operation.init(n_, massive.m_); // Инициализируем локальный массив, который выкинем в ответ
+	Massive operation(n_, massive.m_); // Инициализируем локальный массив, который выкинем в ответ
 	// Супер цикл. Тут вся магия
 	for (int i = 0; i < massive.m_; i++) {
 		for (int j = 0; j < n_; j++) {
@@ -74,8 +85,7 @@ Massive Massive::operator*(Massive & massive) {
 
 // Простое умножение массива
 Massive Massive::operator*(double & var) {
-	Massive operation;
-	operation.init(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
+	Massive operation(n_, m_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
 			operation.data[i][j] = data[i][j] * var; // Собственно сама операция
@@ -86,8 +96,7 @@ Massive Massive::operator*(double & var) {
 
 // Транспонирование массива
 Massive Massive::transposition() {
-	Massive operation;
-	operation.init(m_, n_); // Инициализируем локальный массив, который выкинем в ответ
+	Massive operation(m_, n_); // Инициализируем локальный массив, который выкинем в ответ
 	for (int i = 0; i < n_; i++) { // Перебираем
 		for (int j = 0; j < m_; j++) { // весь массив
 			operation.data[j][i] = data[i][j]; // Собственно сама операция

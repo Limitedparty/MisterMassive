@@ -7,30 +7,35 @@
 
 	Все файлы в проекте распространяются под лицензией GNU General Public License v3.0 (текст с лицензией в корне проекта)
 	Можно: использовать в коммерции, модифицировать, распространять, использовать в личных целях.
-	Нужно: хотябы в копипасте оставить ник и ссылку на оригинальный проект.
+	Нужно: хотя бы в копипасте оставить ник и ссылку на оригинальный проект.
 
 	Реверсия и глобальный апгрейд (версия 3) 2017 год
 */
 #include "mistermassive.h"
 
+const char *VERSION = "{version}";
+const char *BUILDID = "{buildid}";
+
 // Собственно, отсюда стартует программа
 
 int main () {
 	// Вывод приветствия
-	std::cout << "Mister Massive v3\n\n";
+	std::cout << "Mister Massive v" << VERSION << " (" << BUILDID << ")\n\n";
 
 	// Выбираем режим:
-	MM::StartInput();
+	StartInput();
 	// Указываем размер массивов
-	MM::MassiveSizeSet();
+	MassiveSizeSet();
 	// Проверяем совместимость массивов
-	MM::MassiveSizeTest();
+	MassiveSizeTest();
 	// Вводим данные в массивы (заполняем их)
-	MM::MassiveInput();
+	MassiveInput();
 	// Начинаем оперировать с массивами в зависимости от поставленной задачи
-	MM::MassiveOperationStart();
+	MassiveOperationStart();
 
-	// Конец. Выход по enter
+	// Конец. Выход по enter (только для Windows)
+	#ifdef _WIN32
 	system("pause");
+	#endif
 	return 0;
 }
