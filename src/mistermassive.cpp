@@ -43,8 +43,26 @@ void MisterMassive::DeclareMassive() {
 
   // Создаем массив
   massives.push_back(Massive(size));
+  int id = massives.size() - 1;
 
-  // Заполняем массив
+  // Заполняем массив (ручками)
+  double input;
   for (int i = 0; i < size.getX(); i++) {
+    for (int j = 0; j < size.getY(); j++) {
+      printf("Massive[%d][%d]: ", i, j);
+      int err = scanf_s("%lf", &input);
+      // Попытка словить ошибку (при вводе говна)
+      if (err == 0) {
+        // Таки словили ошибку
+        std::cout << "<seting zero>\n";
+        // Отчистка буффера
+        while ((getchar()) != '\n')
+          ;
+        // Ставим ноль
+        input = 0;
+      }
+      // Устанавливаем значение
+      massives[id].set(Position(i, j), input);
+    }
   }
 }
