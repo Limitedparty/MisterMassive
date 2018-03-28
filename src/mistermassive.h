@@ -3,10 +3,15 @@
 
 #include <ctype.h>
 #include <iostream>
+#include <vector>
+#include "massive.h"
 #include "size.h"
 #include "vars.h"
 
 namespace MisterMassive {
+
+// Массив массивов :D
+static std::vector<Massive> massives;
 
 // Основное меню
 void Menu(bool &isExit);

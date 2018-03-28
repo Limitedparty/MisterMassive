@@ -33,19 +33,18 @@ void MisterMassive::Menu(bool &isExit) {
 
 // Объявление нового массива
 void MisterMassive::DeclareMassive() {
-  // Задаем букву массиву
-  char c = 0;
-  printf("New massive letter: ");
-  std::cin.get(c);
-  // Переводим букву в верхний регистр
-  c = (char)toupper(c);
-
   // Задаем длину будущего массива
   int x, y;
-  printf("Size x (length): ");
+  printf("Size x (length): ");  // Кол-во столбцов
   scanf_s("%d", &x);
-  printf("Size y (hight): ");
+  printf("Size y (hight): ");  // Кол-во строк
   scanf_s("%d", &y);
-
   Size size(x, y);
+
+  // Создаем массив
+  massives.push_back(Massive(size));
+
+  // Заполняем массив
+  for (int i = 0; i < size.getX(); i++) {
+  }
 }

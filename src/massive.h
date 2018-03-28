@@ -21,9 +21,8 @@ class Massive {
  private:
   double **massive_;  // Массив
   Size size_;         // Размер
-  char letter_;       // Определяющая буква
  public:
-  Massive(Size &size, char letter);
+  Massive(Size &size);
 
   void set(Position &position, double var);  // Установка значения элемента
   double get(Position &position);  // Получение значения элемента

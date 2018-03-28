@@ -1,10 +1,8 @@
 #include "massive.h"
 
-Massive::Massive(Size &size, char letter) {
+Massive::Massive(Size &size) {
   // Указываем размер
   size_ = size;
-  // Указываем определяющую букву
-  letter_ = letter;
 
   // Выделяем память массиву
   massive_ = new double *[size.getX()];
