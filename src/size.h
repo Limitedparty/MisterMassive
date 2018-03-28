@@ -1,4 +1,5 @@
 // Определение размера (для массивов)
+#pragma once
 class Size {
  private:
   int x_;  // Ширина (столбцы)
