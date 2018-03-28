@@ -23,3 +23,14 @@ double Massive::get(Position &position) {
 
 // Получение размера массива
 const Size *Massive::getSize() { return &size_; }
+
+// Вывод массива в консоль
+void Massive::print() {
+  std::cout << std::endl;
+  for (int i = 0; i < size_.getX(); i++) {
+    for (int j = 0; j < size_.getY(); j++) {
+      std::cout << massive_[i][j] << "   ";
+    }
+    std::cout << std::endl;
+  }
+}

@@ -20,7 +20,7 @@ void MisterMassive::Menu(bool &isExit) {
       DeclareMassive();
       break;
     case 2:  // Вывод массива
-      printf("Print massive\n");
+      PrintMassive();
       break;
     case 3:  // Выход из программы
       isExit = true;
@@ -65,4 +65,23 @@ void MisterMassive::DeclareMassive() {
       massives[id].set(Position(i, j), input);
     }
   }
+
+  PrintMassive();
+}
+
+void MisterMassive::PrintMassive() {
+  int id = -1;
+  // Ввод номера массива
+  printf("Enter massive number: ");
+  scanf_s("%d", &id);
+  // Отчистка буффера
+  while ((getchar()) != '\n')
+    ;
+  // Проверка введеного номера
+  if (id > 0 && id <= (int)massives.size())
+    massives[id - 1].print();  // Выводим массив
+  else
+    printf("Error. WTF with number?");  // Возмущаемся
+
+  printf("\n");
 }

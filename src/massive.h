@@ -14,6 +14,7 @@
 //  x - это элементы массива
 #pragma once
 
+#include <iostream>
 #include "position.h"
 #include "size.h"
 
@@ -27,4 +28,6 @@ class Massive {
   void set(Position &position, double var);  // Установка значения элемента
   double get(Position &position);  // Получение значения элемента
   const Size *getSize();  // Получение размера массива
+
+  void print();  // Вывод массива в консоль
 };

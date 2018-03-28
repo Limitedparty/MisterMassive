@@ -17,5 +17,7 @@ static std::vector<Massive> massives;
 void Menu(bool &isExit);
 // Объявление массива
 void DeclareMassive();
+// Вывод массива
+void PrintMassive();
 
 }  // namespace MisterMassive
