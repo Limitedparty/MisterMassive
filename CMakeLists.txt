@@ -17,6 +17,7 @@ set(SRC
 "src/vars.h"
 "src/mistermassive.h"
 "src/mistermassive.cpp"
-"src/size.h")
+"src/size.h"
+"src/position.h")
 
 add_executable(${PROJECT_NAME} ${SRC})
