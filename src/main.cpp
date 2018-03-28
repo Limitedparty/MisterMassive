@@ -1,10 +1,29 @@
+/* MisterMassive - программа, для работы с массивами.
+ *
+ * Создано неким Mark Vodyanitskiy @mvodya в 2016 году
+ *
+ * Все файлы в проекте распространяются под лицензией GNU General Public License
+ * v3.0 (текст с лицензией в корне проекта).
+ * Можно: использовать в коммерции, модифицировать, распространять, использовать
+ * в личных целях.
+ * Нужно: хотя бы в копипасте оставить ник и ссылку на оригинальный проект.
+ *
+ * Реверсия - 2017 год (версия 3)
+ * Полная реверсия - 2018 год (версия 4)
+ */
+
 #include "mistermassive.h"
 
-int main(int argc, char *argv[])
-{
-    printf("test it! :)");
+int main(int argc, char *argv[]) {
+    // Вывод приветствия (+ версия)
+    printf("Mister Massive v%s\n", VERSION);
+
+    // Запускаем основной цикл программы
+    MisterMassive::Loop();
+
 #ifdef _WIN32
     system("pause");
-#endif // _WIN32
+#endif  // _WIN32
+
     return 0;
 }
