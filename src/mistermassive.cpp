@@ -49,7 +49,7 @@ void MisterMassive::DeclareMassive() {
   double input;
   for (int i = 0; i < size.getX(); i++) {
     for (int j = 0; j < size.getY(); j++) {
-      printf("Massive[%d][%d]: ", i, j);
+      printf("Massive%d[%d][%d]: ", id + 1, i, j);
       int err = scanf_s("%lf", &input);
       // Попытка словить ошибку (при вводе говна)
       if (err == 0) {
