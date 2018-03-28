@@ -1,14 +1,16 @@
-/* Определение размера (для массивов)
- */
-
+// Определение размера (для массивов)
 class Size {
  private:
-  int _x;
-  int _y;
+  int _x;  // Ширина (столбцы)
+  int _y;  // Высота (строки)
 
  public:
   // Конструктор размера (по умолчанию 0 и 0)
-  Size(int x = 0, int y = 0) {
+  Size() {
+    _x = 0;
+    _y = 0;
+  }
+  Size(int& x, int& y) {
     _x = x;
     _y = y;
   }
@@ -21,6 +23,6 @@ class Size {
 
   int getX() { return _x; }     // Получение ширины
   int getY() { return _y; }     // Получение высоты
-  void setX(int x) { _x = x; }  // Установка ширины
-  void setY(int y) { _y = y; }  // Установка высоты
+  void setX(int & x) { _x = x; }  // Установка ширины
+  void setY(int & y) { _y = y; }  // Установка высоты
 };
