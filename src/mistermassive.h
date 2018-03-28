@@ -2,15 +2,12 @@
  */
 #pragma once
 
-#include <iostream>
 #include <ctype.h>
-#include "vars.h"
+#include <iostream>
 #include "size.h"
+#include "vars.h"
 
 namespace MisterMassive {
-
-// Основной цикл программы
-void Loop();
 
 // Основное меню
 void Menu(bool &isExit);

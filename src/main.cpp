@@ -18,8 +18,9 @@ int main(int argc, char *argv[]) {
     // Вывод приветствия (+ версия)
     printf("Mister Massive v%s\n", VERSION);
 
-    // Запускаем основной цикл программы
-    MisterMassive::Loop();
+    // Запускаем меню (в цикле)
+    bool isExit = false;
+    while (!isExit) MisterMassive::Menu(isExit);
 
 #ifdef _WIN32
     system("pause");

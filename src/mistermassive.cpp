@@ -2,13 +2,6 @@
 
 using namespace MisterMassive;
 
-// Основной цикл программы
-void MisterMassive::Loop() {
-    // Запускаем меню (в цикле)
-    bool isExit = false;
-    while (!isExit) Menu(isExit);
-}
-
 // Основное меню
 void MisterMassive::Menu(bool &isExit) {
     // Выводим список доступных действий
@@ -19,7 +12,7 @@ void MisterMassive::Menu(bool &isExit) {
     int action = 0;
     scanf_s("%d", &action);
     // Отчистка буффера
-    while((getchar())!='\n');
+    while ((getchar()) != '\n');
     // Обработка ввода
     switch (action) {
         case 1:  // Объявление нового массива
@@ -42,6 +35,7 @@ void MisterMassive::DeclareMassive() {
     // Задаем букву массиву
     char c = 0;
     printf("New massive letter: ");
+    std::cin.get(c);
     // Переводим букву в верхний регистр
     c = (char)toupper(c);
 
