@@ -15,12 +15,12 @@
 #include "mistermassive.h"
 
 int main(int argc, char *argv[]) {
-    // Вывод приветствия (+ версия)
-    printf("Mister Massive v%s\n", VERSION);
+  // Вывод приветствия (+ версия)
+  printf("Mister Massive v%s\n", VERSION);
 
-    // Запускаем меню (в цикле)
-    bool isExit = false;
-    while (!isExit) MisterMassive::Menu(isExit);
+  // Запускаем меню (в цикле)
+  bool isExit = false;
+  while (!isExit) MisterMassive::Menu(isExit);
 
-    return 0;
+  return 0;
 }
