@@ -11,7 +11,7 @@ class Size {
     x_ = 0;
     y_ = 0;
   }
-  Size(int& x, int& y) {
+  Size(int x, int y) {
     x_ = x;
     y_ = y;
   }
