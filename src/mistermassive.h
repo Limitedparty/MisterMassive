@@ -3,6 +3,7 @@
 
 #include <ctype.h>
 #include <iostream>
+#include <string>
 #include <vector>
 #include "massive.h"
 #include "size.h"
@@ -19,5 +20,7 @@ void Menu(bool &isExit);
 void DeclareMassive();
 // Вывод массива
 void PrintMassive();
+// Операции с массивами
+void OperationsMassive();
 
 }  // namespace MisterMassive

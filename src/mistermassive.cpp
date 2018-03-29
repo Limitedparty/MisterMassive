@@ -5,7 +5,9 @@ using namespace MisterMassive;
 // Основное меню
 void MisterMassive::Menu(bool &isExit) {
   // Выводим список доступных действий
-  printf("\nActions:\n 1) Declare new massive\n 2) Print massive\n 3) Exit");
+  printf(
+      "\nActions:\n 1) Declare new massive\n 2) Print massive\n 3) Operate "
+      "with massives\n 4) Exit");
   printf("\n\nAction: ");
 
   // Получение ввода
@@ -22,7 +24,10 @@ void MisterMassive::Menu(bool &isExit) {
     case 2:  // Вывод массива
       PrintMassive();
       break;
-    case 3:  // Выход из программы
+    case 3:  // Режим оперирования с массивами
+      OperationsMassive();
+      break;
+    case 4:  // Выход из программы
       isExit = true;
       break;
     default:
@@ -84,4 +89,32 @@ void MisterMassive::PrintMassive() {
     printf("Error. WTF with number?");  // Возмущаемся
 
   printf("\n");
+}
+
+void MisterMassive::OperationsMassive() {
+  // Выводим все доступные массивы
+  printf("\nAvailable massives: ");
+  for (int i = 0; i < (int)massives.size(); i++) {
+    printf("(%d) ", i + 1);
+  }
+  // Выводим все доступные операции
+  printf(
+      "\nOperations:\n 1) Summation massives\n 2) Multiplication massives\n"
+      " 3) Transposition massive\n 4) Simple multiplication "
+      "massive\nOperation: ");
+
+  // Получение ввода
+  int action = 0;
+  scanf_s("%d", &action);
+  // Отчистка буффера
+  while ((getchar()) != '\n')
+    ;
+  // Обработка ввода
+  switch (action) {
+    case 1:  // Сложение массивов
+      break;
+    default:
+      printf("Error. Operation not found.");
+      break;
+  }
 }
