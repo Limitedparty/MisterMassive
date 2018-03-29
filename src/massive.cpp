@@ -1,6 +1,6 @@
 #include "massive.h"
 
-Massive::Massive(Size &size) {
+Massive::Massive(Size size) {
   // Указываем размер
   size_ = size;
 

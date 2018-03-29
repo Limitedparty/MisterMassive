@@ -24,7 +24,7 @@ class Massive {
   Size size_;         // Размер
   double **massive_;  // Массив
  public:
-  Massive(Size &size);
+  Massive(Size size);
 
   void set(Position &position, double var);  // Установка значения элемента
   double get(Position &position);  // Получение значения элемента
