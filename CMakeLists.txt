@@ -17,6 +17,7 @@ set(SRC
 "src/vars.h"
 "src/mistermassive.h"
 "src/mistermassive.cpp"
+"src/operations.cpp"
 "src/massive.h"
 "src/massive.cpp"
 "src/utils.h"

@@ -8,8 +8,8 @@
 #include <vector>
 #include "massive.h"
 #include "size.h"
-#include "vars.h"
 #include "utils.h"
+#include "vars.h"
 
 namespace MisterMassive {
 
@@ -24,5 +24,12 @@ void DeclareMassive();
 void PrintMassive();
 // Операции с массивами
 void OperationsMassive();
+
+namespace Operation {
+
+// Операция сложения двух массивов
+void summation(std::vector<Massive> &massives);
+
+}  // namespace Operation
 
 }  // namespace MisterMassive

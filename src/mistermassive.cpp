@@ -110,6 +110,7 @@ void MisterMassive::OperationsMassive() {
   // Обработка ввода
   switch (action) {
     case 1:  // Сложение массивов
+      Operation::summation(massives);
       break;
     default:
       printf("Error. Operation not found.");
