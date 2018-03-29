@@ -32,7 +32,8 @@ class Massive {
 
   void print();  // Вывод массива в консоль
 
-  // Операции с массивом
+  /*  Операции с массивом  */
   Massive operator+(Massive &massive);  // Сложение двух массивов
   Massive operator*(Massive &massive);  // Умножение двух массивов
+  Massive operator!();  // Транспонирование массива
 };

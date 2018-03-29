@@ -80,3 +80,22 @@ Massive Massive::operator*(Massive &massive) {
 
   return operation;
 }
+
+// Транспонирование массива
+//  Меняем индексы всех элементов задом наперед. Т.е. размер будущей матрицы
+//  также инвертирован.
+//
+//  Пример:
+//  | 1 2 | (T)      | 1 3 5 |
+//  | 3 4 |      =   | 2 4 6 |
+//  | 5 6 |
+//
+Massive Massive::operator!() {
+  Massive operation(!size_); // Инвертирован размер
+
+  for (int i = 0; i < size_.getY(); i++)
+    for (int j = 0; j < size_.getX(); j++)
+      operation.massive_[j][i] = massive_[i][j]; // Меняем индексы
+
+  return operation;
+}

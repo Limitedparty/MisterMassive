@@ -90,7 +90,7 @@ void MisterMassive::Operation::transpose(std::vector<Massive> &massives) {
   Massive *MassiveT = &massives[t - 1];
 
   // Операция
-  Massive operation = *MassiveT;
+  Massive operation = !*MassiveT;
   // Вывод массива
   operation.print();
 
