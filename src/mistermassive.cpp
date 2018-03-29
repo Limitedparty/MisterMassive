@@ -112,8 +112,11 @@ void MisterMassive::OperationsMassive() {
     case 1:  // Сложение массивов
       Operation::summation(massives);
       break;
-    case 2: // Умножение массивов
+    case 2:  // Умножение массивов
       Operation::multiplication(massives);
+      break;
+    case 3:  // Транспонирование массива
+      Operation::transpose(massives);
       break;
     default:
       printf("Error. Operation not found.");

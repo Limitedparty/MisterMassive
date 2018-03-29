@@ -32,6 +32,9 @@ void summation(std::vector<Massive> &massives);
 // Операция умножения двух массивов
 void multiplication(std::vector<Massive> &massives);
 
+// Операция транспонирования массива
+void transpose(std::vector<Massive> &massives);
+
 }  // namespace Operation
 
 }  // namespace MisterMassive
