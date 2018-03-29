@@ -1,5 +1,4 @@
 // Всякие вспомогательные куски кода
-
 #pragma once
 
 #include <stdio.h>
