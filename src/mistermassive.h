@@ -9,6 +9,7 @@
 #include "massive.h"
 #include "size.h"
 #include "vars.h"
+#include "utils.h"
 
 namespace MisterMassive {
 

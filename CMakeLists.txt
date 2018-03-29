@@ -19,6 +19,8 @@ set(SRC
 "src/mistermassive.cpp"
 "src/massive.h"
 "src/massive.cpp"
+"src/utils.h"
+"src/utils.cpp"
 "src/size.h"
 "src/position.h")
 

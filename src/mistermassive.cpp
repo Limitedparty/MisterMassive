@@ -14,8 +14,7 @@ void MisterMassive::Menu(bool &isExit) {
   int action = 0;
   scanf("%d", &action);
   // Отчистка буффера
-  while ((getchar()) != '\n')
-    ;
+  Utils::clearBuffer();
   // Обработка ввода
   switch (action) {
     case 1:  // Объявление нового массива
@@ -61,8 +60,7 @@ void MisterMassive::DeclareMassive() {
         // Таки словили ошибку
         std::cout << "<seting zero>\n";
         // Отчистка буффера
-        while ((getchar()) != '\n')
-          ;
+        Utils::clearBuffer();
         // Ставим ноль
         input = 0;
       }
@@ -82,8 +80,7 @@ void MisterMassive::PrintMassive() {
   printf("Enter massive number: ");
   scanf("%d", &id);
   // Отчистка буффера
-  while ((getchar()) != '\n')
-    ;
+  Utils::clearBuffer();
   // Проверка введеного номера
   if (id > 0 && id <= (int)massives.size())
     massives[id - 1].print();  // Выводим массив
@@ -109,8 +106,7 @@ void MisterMassive::OperationsMassive() {
   int action = 0;
   scanf("%d", &action);
   // Отчистка буффера
-  while ((getchar()) != '\n')
-    ;
+  Utils::clearBuffer();
   // Обработка ввода
   switch (action) {
     case 1:  // Сложение массивов
