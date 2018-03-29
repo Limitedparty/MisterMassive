@@ -29,6 +29,8 @@ namespace Operation {
 
 // Операция сложения двух массивов
 void summation(std::vector<Massive> &massives);
+// Операция умножения двух массивов
+void multiplication(std::vector<Massive> &massives);
 
 }  // namespace Operation
 

@@ -5,9 +5,9 @@ Massive::Massive(Size &size) {
   size_ = size;
 
   // Выделяем память массиву
-  massive_ = new double *[size.getX()];
-  for (int i = 0; i < size.getX(); i++) {
-    massive_[i] = new double[size.getY()];
+  massive_ = new double *[size.getY()];
+  for (int i = 0; i < size.getY(); i++) {
+    massive_[i] = new double[size.getX()];
   }
 }
 
@@ -27,8 +27,8 @@ Size *Massive::getSize() { return &size_; }
 // Вывод массива в консоль
 void Massive::print() {
   std::cout << std::endl;
-  for (int i = 0; i < size_.getX(); i++) {
-    for (int j = 0; j < size_.getY(); j++) {
+  for (int i = 0; i < size_.getY(); i++) {
+    for (int j = 0; j < size_.getX(); j++) {
       std::cout << massive_[i][j] << "   ";
     }
     std::cout << std::endl;
@@ -50,31 +50,30 @@ void Massive::print() {
 Massive Massive::operator+(Massive &massive) {
   Massive operation(size_);  // Локальный массив, который уйдет в ответ
 
-  for (int i = 0; i < size_.getX(); i++)
-    for (int j = 0; j < size_.getY(); j++)
+  for (int i = 0; i < size_.getY(); i++)
+    for (int j = 0; j < size_.getX(); j++)
       operation.massive_[i][j] = massive_[i][j] + massive.massive_[i][j];
 
   return operation;
 }
 
 // Умножение двух массивов
-//  Размер будущей матрицы - это количество столбцов массива А на количество
-//  строк массива B. Перебор состоит из трех циклов. Старший цикл перебирает
-//  количество строк массива B, младший перебирает количество столбцов массива
-//  А, а внутренний перебирает количество строк массива А.
-//
+//  Размер будущей матрицы - это количество столбцов массива B на количество
+//  строк массива A. Перебор состоит из трех циклов. Старший цикл перебирает
+//  строки массива А, младший перебирает столбцы массива B, а внутренний
+//  перебирает столбцы массива А.
 //  Первые два цикла перебирают саму будущую матрицу (задом наперед правда).
 //  Внутренний цикл как раз занимается созданием данных. В отличии от сложения,
 //  в умножении будущая ячейка массива C равна сумме произведений элементов
 //  столбцов массива А на элементы строк массива B.
 Massive Massive::operator*(Massive &massive) {
-  Massive operation(Size(size_.getX(), massive.size_.getY()));
+  Massive operation(Size(massive.size_.getX(), size_.getY()));
 
-  for (int i = 0; i < massive.size_.getY(); i++) {
-    for (int j = 0; j < size_.getX(); j++) {
+  for (int i = 0; i < size_.getY(); i++) {            // строки A
+    for (int j = 0; j < massive.size_.getX(); j++) {  // столбцы B
       double buffer = 0;
-      for (int k = 0; k < size_.getY(); k++)
-        buffer += massive_[i][k] * massive.massive_[k][j];  // Магия
+      for (int k = 0; k < size_.getX(); k++)  // столбцы A
+        buffer += massive_[i][k] * massive.massive_[k][j];
       operation.massive_[i][j] = buffer;  // Записываем значение
     }
   }

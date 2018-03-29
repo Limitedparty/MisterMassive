@@ -51,8 +51,8 @@ void MisterMassive::DeclareMassive() {
 
   // Заполняем массив (ручками)
   double input;
-  for (int i = 0; i < size.getX(); i++) {
-    for (int j = 0; j < size.getY(); j++) {
+  for (int i = 0; i < size.getY(); i++) {
+    for (int j = 0; j < size.getX(); j++) {
       printf("Massive%d[%d][%d]: ", id + 1, i, j);
       int err = scanf("%lf", &input);
       // Попытка словить ошибку (при вводе говна)
@@ -111,6 +111,9 @@ void MisterMassive::OperationsMassive() {
   switch (action) {
     case 1:  // Сложение массивов
       Operation::summation(massives);
+      break;
+    case 2: // Умножение массивов
+      Operation::multiplication(massives);
       break;
     default:
       printf("Error. Operation not found.");
