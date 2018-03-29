@@ -8,7 +8,7 @@ using namespace MisterMassive::Operation;
 void MisterMassive::Operation::summation(std::vector<Massive> &massives) {
   // Ввод данных (выбор двух массивов)
   int x, y;
-  printf("\nMassiveX + MassiveY = Massive%d\n", massives.size() + 1);
+  printf("\nMassiveX + MassiveY = Massive%d\n", (int)massives.size() + 1);
   printf("X = ");
   scanf("%d", &x);
   printf("Y = ");
@@ -43,7 +43,7 @@ void MisterMassive::Operation::summation(std::vector<Massive> &massives) {
 void MisterMassive::Operation::multiplication(std::vector<Massive> &massives) {
   // Ввод данных (выбор двух массивов)
   int x, y;
-  printf("\nMassiveX * MassiveY = Massive%d\n", massives.size() + 1);
+  printf("\nMassiveX * MassiveY = Massive%d\n", (int)massives.size() + 1);
   printf("X = ");
   scanf("%d", &x);
   printf("Y = ");
@@ -78,7 +78,7 @@ void MisterMassive::Operation::multiplication(std::vector<Massive> &massives) {
 void MisterMassive::Operation::transpose(std::vector<Massive> &massives) {
   // Ввод данных (выбор массива)
   int t;
-  printf("\nT(MassiveT) = Massive%d\n", massives.size() + 1);
+  printf("\nT(MassiveT) = Massive%d\n", (int)massives.size() + 1);
   printf("T = ");
   scanf("%d", &t);
   // Провека существования такого массива
