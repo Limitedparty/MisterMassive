@@ -66,6 +66,17 @@ Massive Massive::operator+(Massive &massive) {
 //  Внутренний цикл как раз занимается созданием данных. В отличии от сложения,
 //  в умножении будущая ячейка массива C равна сумме произведений элементов
 //  столбцов массива А на элементы строк массива B.
+//
+//  Пример:
+//  | 1 2 |     | 1 2 3 |     | 9  12 15 |
+//  | 3 4 |  *  | 4 5 6 |  =  | 19 26 33 |
+//  | 5 6 |                   | 29 40 51 |
+//
+//  Пример2:
+//  | a b |     | g h i |     | a*g+b*j  a*h+b*k a*i+b*l |
+//  | c d |  *  | J k l |  =  | c*g+d*j  c*h+d*k c*i+d*l |
+//  | e f |                   | e*g+f*j  e*h+f*k e*i+f*l |
+//
 Massive Massive::operator*(Massive &massive) {
   Massive operation(Size(massive.size_.getX(), size_.getY()));
 
@@ -86,16 +97,16 @@ Massive Massive::operator*(Massive &massive) {
 //  также инвертирован.
 //
 //  Пример:
-//  | 1 2 | (T)      | 1 3 5 |
-//  | 3 4 |      =   | 2 4 6 |
+//  | 1 2 | (T)    | 1 3 5 |
+//  | 3 4 |     =  | 2 4 6 |
 //  | 5 6 |
 //
 Massive Massive::operator!() {
-  Massive operation(!size_); // Инвертирован размер
+  Massive operation(!size_);  // Инвертирован размер
 
   for (int i = 0; i < size_.getY(); i++)
     for (int j = 0; j < size_.getX(); j++)
-      operation.massive_[j][i] = massive_[i][j]; // Меняем индексы
+      operation.massive_[j][i] = massive_[i][j];  // Меняем индексы
 
   return operation;
 }
