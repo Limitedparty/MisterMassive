@@ -15,13 +15,23 @@ void MisterMassive::Operation::summation(std::vector<Massive> &massives) {
   scanf("%d", &y);
 
   // Провека существования таких массивов
-  if (!(x <= (int)massives.size() && x > 0 && y <= (int)massives.size() && y > 0)) {
+  if (!(x <= (int)massives.size() && x > 0 && y <= (int)massives.size() &&
+        y > 0)) {
     printf("WTF with number? Massives not found.\n");
     return;
   }
 
+  Massive *MassiveX = &massives[x - 1];
+  Massive *MassiveY = &massives[y - 1];
+
+  // Проверка совместимости массивов
+  if (*MassiveX->getSize() != *MassiveY->getSize()) {
+    printf("Massives are not compatible.\n");
+    return;
+  }
+
   // Операция
-  Massive operation = massives[x - 1] + massives[y - 1];
+  Massive operation = *MassiveX + *MassiveY;
   // Вывод массива
   operation.print();
 }

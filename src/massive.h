@@ -28,7 +28,7 @@ class Massive {
 
   void set(Position &position, double var);  // Установка значения элемента
   double get(Position &position);  // Получение значения элемента
-  const Size *getSize();  // Получение размера массива
+  Size *getSize();  // Получение размера массива
 
   void print();  // Вывод массива в консоль
 

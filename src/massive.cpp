@@ -22,7 +22,7 @@ double Massive::get(Position &position) {
 }
 
 // Получение размера массива
-const Size *Massive::getSize() { return &size_; }
+Size *Massive::getSize() { return &size_; }
 
 // Вывод массива в консоль
 void Massive::print() {

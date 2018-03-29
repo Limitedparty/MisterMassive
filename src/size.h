@@ -16,8 +16,22 @@ class Size {
     y_ = y;
   }
 
-  int getX() { return x_; }     // Получение ширины
-  int getY() { return y_; }     // Получение высоты
-  void setX(int & x) { x_ = x; }  // Установка ширины
-  void setY(int & y) { y_ = y; }  // Установка высоты
+  bool operator==(Size& size) {  // Проверка на равенство
+    if (size.getX() == x_ && size.getY() == y_)
+      return true;
+    else
+      return false;
+  }
+
+  bool operator!=(Size& size) {  // Проверка на неравенство
+    if (size.getX() == x_ && size.getY() == y_)
+      return false;
+    else
+      return true;
+  }
+
+  int getX() { return x_; }      // Получение ширины
+  int getY() { return y_; }      // Получение высоты
+  void setX(int& x) { x_ = x; }  // Установка ширины
+  void setY(int& y) { y_ = y; }  // Установка высоты
 };
