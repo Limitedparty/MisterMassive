@@ -12,7 +12,7 @@ void MisterMassive::Menu(bool &isExit) {
 
   // Получение ввода
   int action = 0;
-  scanf_s("%d", &action);
+  scanf("%d", &action);
   // Отчистка буффера
   while ((getchar()) != '\n')
     ;
@@ -41,9 +41,9 @@ void MisterMassive::DeclareMassive() {
   // Задаем длину будущего массива
   int x, y;
   printf("Size x (length): ");  // Кол-во столбцов
-  scanf_s("%d", &x);
+  scanf("%d", &x);
   printf("Size y (hight): ");  // Кол-во строк
-  scanf_s("%d", &y);
+  scanf("%d", &y);
   Size size(x, y);
 
   // Создаем массив
@@ -55,7 +55,7 @@ void MisterMassive::DeclareMassive() {
   for (int i = 0; i < size.getX(); i++) {
     for (int j = 0; j < size.getY(); j++) {
       printf("Massive%d[%d][%d]: ", id + 1, i, j);
-      int err = scanf_s("%lf", &input);
+      int err = scanf("%lf", &input);
       // Попытка словить ошибку (при вводе говна)
       if (err == 0) {
         // Таки словили ошибку
@@ -66,8 +66,10 @@ void MisterMassive::DeclareMassive() {
         // Ставим ноль
         input = 0;
       }
+      Position position(i, j);
+
       // Устанавливаем значение
-      massives[id].set(Position(i, j), input);
+      massives[id].set(position, input);
     }
   }
 
@@ -78,7 +80,7 @@ void MisterMassive::PrintMassive() {
   int id = -1;
   // Ввод номера массива
   printf("Enter massive number: ");
-  scanf_s("%d", &id);
+  scanf("%d", &id);
   // Отчистка буффера
   while ((getchar()) != '\n')
     ;
@@ -105,7 +107,7 @@ void MisterMassive::OperationsMassive() {
 
   // Получение ввода
   int action = 0;
-  scanf_s("%d", &action);
+  scanf("%d", &action);
   // Отчистка буффера
   while ((getchar()) != '\n')
     ;

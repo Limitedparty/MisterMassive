@@ -14,6 +14,7 @@
 //  x - это элементы массива
 #pragma once
 
+#include <stdio.h>
 #include <iostream>
 #include "position.h"
 #include "size.h"

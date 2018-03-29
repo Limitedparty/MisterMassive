@@ -1,8 +1,9 @@
 // Основные функции программы
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <ctype.h>
-#include <iostream>
+#include <stdio.h>
 #include <string>
 #include <vector>
 #include "massive.h"
