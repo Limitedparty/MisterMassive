@@ -14,7 +14,7 @@ void MisterMassive::Operation::summation(std::vector<Massive> &massives) {
   printf("Y = ");
   scanf("%d", &y);
 
-  // Провека существования таких массивов
+  // Проверка существования таких массивов
   if (!(x <= (int)massives.size() && x > 0 && y <= (int)massives.size() &&
         y > 0)) {
     printf("WTF with number? Massives not found.\n");
@@ -49,7 +49,7 @@ void MisterMassive::Operation::multiplication(std::vector<Massive> &massives) {
   printf("Y = ");
   scanf("%d", &y);
 
-  // Провека существования таких массивов
+  // Проверка существования таких массивов
   if (!(x <= (int)massives.size() && x > 0 && y <= (int)massives.size() &&
         y > 0)) {
     printf("WTF with number? Massives not found.\n");
@@ -81,7 +81,7 @@ void MisterMassive::Operation::transpose(std::vector<Massive> &massives) {
   printf("\nT(MassiveT) = Massive%d\n", (int)massives.size() + 1);
   printf("T = ");
   scanf("%d", &t);
-  // Провека существования такого массива
+  // Проверка существования такого массива
   if (!(t <= (int)massives.size() && t > 0)) {
     printf("WTF with number? Massive not found.\n");
     return;
@@ -91,6 +91,33 @@ void MisterMassive::Operation::transpose(std::vector<Massive> &massives) {
 
   // Операция
   Massive operation = !*MassiveT;
+  // Вывод массива
+  operation.print();
+
+  // Добавляем массив
+  massives.push_back(operation);
+}
+
+// Операция простого сложения массива
+void MisterMassive::Operation::simpleSummation(std::vector<Massive> &massives) {
+  // Ввод данных (выбор массива)
+  int s, n;
+  printf("\nMassiveS + N = Massive%d\n", (int)massives.size() + 1);
+  printf("S = ");
+  scanf("%d", &s);
+  // Ввод числа
+  printf("N = ");
+  scanf("%d", &n);
+  // Проверка существования такого массива
+  if (!(s <= (int)massives.size() && s > 0)) {
+    printf("WTF with number? Massive not found.\n");
+    return;
+  }
+
+  Massive *MassiveT = &massives[s - 1];
+
+  // Операция
+  Massive operation = *MassiveT + n;
   // Вывод массива
   operation.print();
 

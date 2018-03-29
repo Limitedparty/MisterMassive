@@ -110,3 +110,21 @@ Massive Massive::operator!() {
 
   return operation;
 }
+
+// Простое сложение массива
+//  Просто прибавляет к каждому элементу массива число.
+//
+//  Пример:
+//  |1 2 3|           |6  7  8 |
+//  |4 5 6|  +  5  =  |9  10 11|
+//  |7 8 9|           |12 13 14|
+//
+Massive Massive::operator+(double number) {
+  Massive operation(size_);  // Размер тот же
+
+  for (int i = 0; i < size_.getY(); i++)
+    for (int j = 0; j < size_.getX(); j++)
+      operation.massive_[i][j] = massive_[i][j] + number;  // Прибавляем число
+
+  return operation;
+}

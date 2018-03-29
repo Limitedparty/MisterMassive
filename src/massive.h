@@ -34,6 +34,7 @@ class Massive {
 
   /*  Операции с массивом  */
   Massive operator+(Massive &massive);  // Сложение двух массивов
+  Massive operator+(double number);  // Простое сложение
   Massive operator*(Massive &massive);  // Умножение двух массивов
   Massive operator!();  // Транспонирование массива
 };
