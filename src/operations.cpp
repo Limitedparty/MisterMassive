@@ -19,4 +19,9 @@ void MisterMassive::Operation::summation(std::vector<Massive> &massives) {
     printf("WTF with number? Massives not found.\n");
     return;
   }
+
+  // Операция
+  Massive operation = massives[x - 1] + massives[y - 1];
+  // Вывод массива
+  operation.print();
 }

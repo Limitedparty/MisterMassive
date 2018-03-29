@@ -21,8 +21,8 @@
 
 class Massive {
  private:
-  double **massive_;  // Массив
   Size size_;         // Размер
+  double **massive_;  // Массив
  public:
   Massive(Size &size);
 
@@ -31,4 +31,7 @@ class Massive {
   const Size *getSize();  // Получение размера массива
 
   void print();  // Вывод массива в консоль
+
+  // Операции с массивом
+  Massive operator+(Massive &massive);  // Сложение двух массивов
 };

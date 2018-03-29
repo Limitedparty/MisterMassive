@@ -34,3 +34,14 @@ void Massive::print() {
     std::cout << std::endl;
   }
 }
+
+// Сложение двух массивов
+Massive Massive::operator+(Massive &massive) {
+  Massive operation(size_);  // Локальный массив, который уйдет в ответ
+
+  for (int i = 0; i < size_.getX(); i++)
+    for (int j = 0; j < size_.getY(); j++)
+      operation.massive_[i][j] = massive_[i][j] + massive.massive_[i][j];
+
+  return operation;
+}
