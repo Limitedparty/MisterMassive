@@ -30,6 +30,8 @@ class Size {
       return true;
   }
 
+  Size operator!() { return Size(y_, x_); } // Инверсия
+
   int getX() { return x_; }      // Получение ширины
   int getY() { return y_; }      // Получение высоты
   void setX(int& x) { x_ = x; }  // Установка ширины
