@@ -34,6 +34,9 @@ void MisterMassive::Operation::summation(std::vector<Massive> &massives) {
   Massive operation = *MassiveX + *MassiveY;
   // Вывод массива
   operation.print();
+
+  // Добавляем массив
+  massives.push_back(operation);
 }
 
 // Операция умножения двух массивов
@@ -66,4 +69,7 @@ void MisterMassive::Operation::multiplication(std::vector<Massive> &massives) {
   Massive operation = *MassiveX * *MassiveY;
   // Вывод массива
   operation.print();
+
+  // Добавляем массив
+  massives.push_back(operation);
 }
