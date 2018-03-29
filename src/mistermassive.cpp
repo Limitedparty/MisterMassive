@@ -39,9 +39,9 @@ void MisterMassive::Menu(bool &isExit) {
 void MisterMassive::DeclareMassive() {
   // Задаем длину будущего массива
   int x, y;
-  printf("Size x (length): ");  // Кол-во столбцов
+  printf("Size x (columns / length): ");  // Кол-во столбцов
   scanf("%d", &x);
-  printf("Size y (hight): ");  // Кол-во строк
+  printf("Size y (rows / hight): ");  // Кол-во строк
   scanf("%d", &y);
   Size size(x, y);
 
