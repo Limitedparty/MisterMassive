@@ -2,7 +2,7 @@
 
 using namespace Utils;
 
-// Отчистка буффера
+// Отчистка буффера (для scanf)
 void Utils::clearBuffer() {
   while ((getchar()) != '\n')
     ;

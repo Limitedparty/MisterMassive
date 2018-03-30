@@ -1,3 +1,4 @@
+// Основные функции программы (меню)
 #include "mistermassive.h"
 
 using namespace MisterMassive;

@@ -5,7 +5,7 @@
 
 namespace Utils {
 
-// Отчиска буффера
+// Отчиска буффера (для scanf)
 void clearBuffer();
 
 }  // namespace Utils
