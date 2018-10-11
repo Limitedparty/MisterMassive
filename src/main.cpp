@@ -10,16 +10,9 @@
 //
 //   Реверсия - 2017 год (версия 3)
 //   Полная реверсия - 2018 год (версия 4)
-
-#include "mistermassive.h"
+//   Вторая полная реверсия - 2018 год (версия 5)
 
 int main(int argc, char *argv[]) {
-  // Вывод приветствия (+ версия)
-  printf("Mister Massive v%s\n", VERSION);
-
-  // Запускаем меню (в цикле)
-  bool isExit = false;
-  while (!isExit) MisterMassive::Menu(isExit);
-
+  
   return 0;
 }
