@@ -12,9 +12,13 @@
 //   Полная реверсия - 2018 год (версия 4)
 //   Вторая полная реверсия - 2018 год (версия 5)
 
+#include <iostream>
 #include "matrix.h"
 
 int main(int argc, char* argv[]) {
   Matrix<double> A(3, 3);
+  A.set(1, 1, 5.0f);
+  std::cout << A.get(1, 1);
+  system("pause");
   return 0;
 }
