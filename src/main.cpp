@@ -12,7 +12,9 @@
 //   Полная реверсия - 2018 год (версия 4)
 //   Вторая полная реверсия - 2018 год (версия 5)
 
+#include "matrix.h"
+
 int main(int argc, char* argv[]) {
-  
+  Matrix<double> A(3, 3);
   return 0;
 }

@@ -3,23 +3,32 @@
 //  но по факту речь, естественно, идет о матрицах
 
 #pragma once
-#include "element.h"
-#include "size.h"
 
 template<typename T>
 class Matrix {
  private:
   // Размер матрицы
-  Size size_;
+  // m - количество строк
+  // n - количество столбцов
+  int m, n;
   // Элементы
-  Element<T>** elements_;
+  T** elements;
 
  public:
    // Конструктор
-   Matrix(Size size) {
-     // Записываем размер
-     size_ = size;
-     // Выделяем память
-     elements_ = new Element[size_.rows(), size.columns()];
-   }
+   Matrix(int rows, int columns);
 };
+
+
+// Конструктор
+template<typename T>
+Matrix<T>::Matrix(int rows, int columns) {
+  // Записываем строки/столбцы
+  m = rows;
+  n = columns;
+  // Выделяем место для элементов
+  elements = new T*[m];
+  for (int j = 0; j < n; j++)
+    // Создаем элементы
+    elements[j] = new T(0);
+}
