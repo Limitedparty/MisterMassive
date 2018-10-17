@@ -2,9 +2,8 @@
 //  Впринципе все просто - описывает размер матрицы.
 
 #pragma once
-#include "position.h"
 
-class Size : private Position {
+class Size {
  private:
   // m - количество строк
   // n - количество столбцов
@@ -16,6 +15,7 @@ class Size : private Position {
     m = rows;
     n = columns;
   }
+
   // Строки
   int rows() { return n; }
   // Столбцы

@@ -14,15 +14,8 @@ set_target_properties(${TARGET} PROPERTIES
 # Исполняемые файлы проекта
 set(SRC 
 "src/main.cpp"
-"src/vars.h"
-"src/mistermassive.h"
-"src/mistermassive.cpp"
-"src/operations.cpp"
-"src/massive.h"
-"src/massive.cpp"
-"src/utils.h"
-"src/utils.cpp"
+"src/matrix.h"
 "src/size.h"
-"src/position.h")
+"src/element.h")
 
 add_executable(${PROJECT_NAME} ${SRC})

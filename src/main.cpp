@@ -1,4 +1,4 @@
-//  MisterMassive - программа, для работы с массивами.
+//  MisterMassive - программа, для работы с матрицами.
 //
 //   Создано неким Mark Vodyanitskiy @mvodya в 2016 году
 //
@@ -12,7 +12,7 @@
 //   Полная реверсия - 2018 год (версия 4)
 //   Вторая полная реверсия - 2018 год (версия 5)
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   
   return 0;
 }
