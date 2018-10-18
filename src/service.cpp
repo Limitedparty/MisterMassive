@@ -31,7 +31,7 @@ void Service::createMatrix() {
   Matrix<double>* M = new Matrix<double>(m, n);
   matrix.push_back(M);
 
-  // Выбирвем что с ней делать
+  // Выбираем что с ней делать
   int option = -1;
   std::cout << "Matrix created. What you can do:\n  1) Manual input\n  2) Zero "
                "matrix\n  3) Unit matrix\n\n>>> ";
@@ -47,6 +47,8 @@ void Service::createMatrix() {
         }
       break;
     case 3:  // Создание единичной матрицы
+      for (int i = 0; i < m && i < n; i++)
+        matrix[num]->set(i, i, 1);  // По главной диагонали забиваем 1
       break;
     case 2:  // Нулевая матрица (ничего не делаем, там и так нули)
     default:
