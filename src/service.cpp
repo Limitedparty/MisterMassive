@@ -6,11 +6,20 @@ Service::Service() { isExit = false; }
 // Цикл
 void Service::loop() {
   int option = -1;
-  std::cout << "What you can do:\n  1) Create matrix\n  0) Exit\n\n>>> ";
+  std::cout
+      << "\nWhat you can do:\n  1) Create matrix\n  2) Print matrix\n  0) "
+         "Exit\n\n>>> ";
   std::cin >> option;
   switch (option) {
     case 1:  // Создание матрицы
       createMatrix();
+      break;
+    case 2:  // Вывод матрицы
+      int num;
+      std::cout << "Matrix number: ";
+      // Получаем номер запрашиваемой матрицы
+      std::cin >> num;
+      printMatrix(num);
       break;
     case 0:  // Выход из программы
       isExit = true;
@@ -56,4 +65,34 @@ void Service::createMatrix() {
     default:
       break;
   }
+}
+
+// Вывод матрицы
+void Service::printMatrix(int num) {
+  // Проверяем на существование матрицу
+  if (num >= 0 && !(num <= matrix.size() - 1)) {
+    std::cout << "Matrix " << num << " not found!\n";
+    return;
+  }
+  Matrix<double>* M = matrix[num];
+
+  // Поиск самого длинного числа
+  int maxlenth = 0;
+  for (int i = 0; i < M->sizeRows(); i++)
+    for (int j = 0; j < M->sizeColumns(); j++) {
+      int l = length(M->get(i, j));
+      if (l > maxlenth) maxlenth = l;
+    }
+}
+
+// Длина числа
+int Service::length(double number) {
+  int maxlenth = 0;
+  // Делим элемент до тех пор, пока он не станет равным нулю
+  while (number != 0) {
+    number /= 10;
+    // количество итераций записываем - это и будет длинна
+    maxlenth++;
+  }
+  return maxlenth;
 }

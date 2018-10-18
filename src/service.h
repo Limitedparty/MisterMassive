@@ -12,9 +12,13 @@ class Service {
  private:
   // Массив матриц
   std::vector<Matrix<double>*> matrix;
-  
+
   // Создание матрицы
   void createMatrix();
+  // Вывод матрицы
+  void printMatrix(int num);
+  // Длина числа
+  int length(double number);
 
  public:
   // Для выхода и завершения программы
