@@ -83,6 +83,16 @@ void Service::printMatrix(int num) {
       int l = length(M->get(i, j));
       if (l > maxlenth) maxlenth = l;
     }
+
+  for (int i = 0; i < M->sizeRows(); i++) {
+    for (int j = 0; j < M->sizeColumns(); j++) {
+      int spaces = maxlenth - length(M->get(i, j));
+      for (int s = 0; s < spaces; s++) std::cout << " ";
+      std::cout << M->get(i, j);
+      std::cout << " ";
+    }
+    std::cout << std::endl;
+  }
 }
 
 // Длина числа
