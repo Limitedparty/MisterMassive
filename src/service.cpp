@@ -6,12 +6,14 @@ Service::Service() { isExit = false; }
 // Цикл
 void Service::loop() {
   int option = -1;
-  std::cout << "What you can do:\n  1) Create matrix\n\n>>> ";
+  std::cout << "What you can do:\n  1) Create matrix\n  0) Exit\n\n>>> ";
   std::cin >> option;
   switch (option) {
-    case 1:
+    case 1:  // Создание матрицы
       createMatrix();
       break;
+    case 0:  // Выход из программы
+      isExit = true;
     default:
       break;
   }
