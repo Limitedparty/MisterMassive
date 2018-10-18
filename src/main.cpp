@@ -13,12 +13,13 @@
 //   Вторая полная реверсия - 2018 год (версия 5)
 
 #include <iostream>
-#include "matrix.h"
+#include "service.h"
 
+Service* service;
 int main(int argc, char* argv[]) {
-  Matrix<double> A(3, 3);
-  A.set(1, 1, 5.0f);
-  std::cout << A.get(1, 1);
-  // system("pause");
+  service = new Service();
+  // Главный цикл
+  while (!service->isExit)
+    service->Loop();
   return 0;
 }
