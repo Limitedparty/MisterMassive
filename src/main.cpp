@@ -19,6 +19,6 @@ int main(int argc, char* argv[]) {
   Matrix<double> A(3, 3);
   A.set(1, 1, 5.0f);
   std::cout << A.get(1, 1);
-  system("pause");
+  // system("pause");
   return 0;
 }

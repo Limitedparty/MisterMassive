@@ -14,7 +14,7 @@
 
 #pragma once
 
-template<typename T>
+template <typename T>
 class Matrix {
  private:
   // Размер матрицы
@@ -25,22 +25,21 @@ class Matrix {
   T** elements;
 
  public:
-   // Конструктор
-   Matrix(int rows, int columns);
+  // Конструктор
+  Matrix(int rows, int columns);
 
-   // Получение количества строк
-   int sizeRows() { return m; }
-   // Получение количества столбцов
-   int sizeColumns() { return n; }
-   // Получение элемента
-   T get(int row, int column) { return elements[row][column]; }
-   // Установка значения элемента
-   void set(int row, int column, T value) { elements[row][column] = value; }
+  // Получение количества строк
+  int sizeRows() { return m; }
+  // Получение количества столбцов
+  int sizeColumns() { return n; }
+  // Получение элемента
+  T get(int row, int column) { return elements[row][column]; }
+  // Установка значения элемента
+  void set(int row, int column, T value);
 };
 
-
 // Конструктор
-template<typename T>
+template <typename T>
 Matrix<T>::Matrix(int rows, int columns) {
   // Записываем строки/столбцы
   m = rows;
@@ -50,4 +49,10 @@ Matrix<T>::Matrix(int rows, int columns) {
   for (int j = 0; j < n; j++)
     // Создаем элементы
     elements[j] = new T(0);
+}
+
+// Установка значения элемента
+template <typename T>
+void Matrix<T>::set(int row, int column, T value) {
+  elements[row][column] = value;
 }

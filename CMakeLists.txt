@@ -14,6 +14,8 @@ set_target_properties(${TARGET} PROPERTIES
 # Исполняемые файлы проекта
 set(SRC 
 "src/main.cpp"
-"src/matrix.h")
+"src/matrix.h"
+"src/service.h"
+"src/service.cpp")
 
 add_executable(${PROJECT_NAME} ${SRC})
