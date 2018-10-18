@@ -19,7 +19,6 @@ Service* service;
 int main(int argc, char* argv[]) {
   service = new Service();
   // Главный цикл
-  while (!service->isExit)
-    service->Loop();
+  while (!service->isExit) service->loop();
   return 0;
 }
